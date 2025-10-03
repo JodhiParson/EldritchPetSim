@@ -13,7 +13,7 @@ public class PetManager : MonoBehaviour
     [Header("Upgrade System")]
     public int upgradeCost = 10;         // Starting upgrade cost
     public float costMultiplier = 1.5f;  // How much cost increases per upgrade
-    public int feedIncreaseAmount = 5;   // How much feedAmount increases per upgrade
+    public float feedMultiplier = 1.2f;   // How much feedAmount increases per upgrade
     public Button upgradeButton;         // Upgrade button
     public TMP_Text upgradeCostText;     // Text showing upgrade cost
 
@@ -38,7 +38,7 @@ public class PetManager : MonoBehaviour
         if (petHunger >= upgradeCost)
         {
             petHunger -= upgradeCost;          // Deduct Strength
-            feedAmount += feedIncreaseAmount;   // Increase feedAmount
+            feedAmount = Mathf.CeilToInt(feedAmount * feedMultiplier);
             UpdateUI();
 
             // Increase the upgrade cost

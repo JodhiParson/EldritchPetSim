@@ -685,7 +685,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1767803607}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DoRitual
         m_Mode: 1
@@ -1115,9 +1115,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1752415775}
-        m_TargetAssemblyTypeName: UpgradeB, Assembly-CSharp
-        m_MethodName: OnUpgradeButtonClick
+      - m_Target: {fileID: 1767803609}
+        m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
+        m_MethodName: BuyUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1384,8 +1384,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1767803607}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1767803609}
+        m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
         m_MethodName: FeedPet
         m_Mode: 1
         m_Arguments:
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1767803607}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: CleanPet
         m_Mode: 1
@@ -2412,7 +2412,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1752415772}
   - component: {fileID: 1752415774}
-  - component: {fileID: 1752415775}
   m_Layer: 0
   m_Name: controller
   m_TagString: Untagged
@@ -2451,23 +2450,6 @@ MonoBehaviour:
   upgradeMenu: {fileID: 1529573493}
   optionsOpen: 0
   upgradeOpen: 0
---- !u!114 &1752415775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752415770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11e8eb82e49dc44d8210eb6a438dbbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
-  upgradeLevel: 0
-  baseUpgradeCost: 20
-  costMultiplier: 1.5
-  upgradeCostText: {fileID: 1690284189}
 --- !u!1 &1767803606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,7 +2459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1767803608}
-  - component: {fileID: 1767803607}
+  - component: {fileID: 1767803609}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2485,20 +2467,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1767803607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767803606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2090d7db6d96ca4fa9be8b2191b13a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  petHunger: 50
-  hungerText: {fileID: 1840960274}
 --- !u!4 &1767803608
 Transform:
   m_ObjectHideFlags: 0
@@ -2514,6 +2482,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767803609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767803606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2090d7db6d96ca4fa9be8b2191b13a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petHunger: 50
+  feedAmount: 10
+  hungerText: {fileID: 1840960274}
+  feedAmountText: {fileID: 1592525859}
+  upgradeCost: 10
+  costMultiplier: 1.5
+  feedIncreaseAmount: 6
+  upgradeButton: {fileID: 654924889}
+  upgradeCostText: {fileID: 1690284189}
 --- !u!1 &1840960273
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,7 +2626,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petHunger: 50
+  feedAmount: 10
   hungerText: {fileID: 0}
+  feedAmountText: {fileID: 0}
+  upgradeCost: 10
+  costMultiplier: 1.5
+  feedIncreaseAmount: 5
+  upgradeButton: {fileID: 0}
+  upgradeCostText: {fileID: 0}
 --- !u!222 &1840960276
 CanvasRenderer:
   m_ObjectHideFlags: 0
