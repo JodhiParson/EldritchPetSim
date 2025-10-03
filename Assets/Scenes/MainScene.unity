@@ -474,9 +474,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1752415771}
-        m_TargetAssemblyTypeName: OptionsMenuController, Assembly-CSharp
-        m_MethodName: ToggleMenu
+      - m_Target: {fileID: 1752415774}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OpenUpgradeMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 1529573496}
   - component: {fileID: 1529573495}
   m_Layer: 5
-  m_Name: Upgrades UI
+  m_Name: UpgradeMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2399,8 +2399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752415772}
-  - component: {fileID: 1752415771}
-  - component: {fileID: 1752415773}
+  - component: {fileID: 1752415774}
   m_Layer: 0
   m_Name: controller
   m_TagString: Untagged
@@ -2408,20 +2407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1752415771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752415770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c353ceabf6a16424bb4b3a2353f5f1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 395388705}
-  isOpen: 0
 --- !u!4 &1752415772
 Transform:
   m_ObjectHideFlags: 0
@@ -2437,7 +2422,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1752415773
+--- !u!114 &1752415774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2446,9 +2431,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1752415770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11e8eb82e49dc44d8210eb6a438dbbc, type: 3}
+  m_Script: {fileID: 11500000, guid: c353ceabf6a16424bb4b3a2353f5f1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionsMenu: {fileID: 395388705}
+  upgradeMenu: {fileID: 1529573493}
+  optionsOpen: 0
+  upgradeOpen: 0
 --- !u!1 &1767803606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,9 +2797,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1752415771}
-        m_TargetAssemblyTypeName: OptionsMenuController, Assembly-CSharp
-        m_MethodName: ToggleMenu
+      - m_Target: {fileID: 1752415774}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OpenOptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
