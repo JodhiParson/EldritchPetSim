@@ -17,6 +17,10 @@ public class PetManager : MonoBehaviour
     public Button upgradeButton;         // Upgrade button
     public TMP_Text upgradeCostText;     // Text showing upgrade cost
 
+    [Header("Upgrade Auto")]
+
+    
+
     void Start()
     {
         UpdateUI();
