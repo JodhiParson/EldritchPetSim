@@ -1114,7 +1114,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 654924890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1752415775}
+        m_TargetAssemblyTypeName: UpgradeB, Assembly-CSharp
+        m_MethodName: OnUpgradeButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &654924890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2400,6 +2412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752415772}
   - component: {fileID: 1752415774}
+  - component: {fileID: 1752415775}
   m_Layer: 0
   m_Name: controller
   m_TagString: Untagged
@@ -2438,6 +2451,23 @@ MonoBehaviour:
   upgradeMenu: {fileID: 1529573493}
   optionsOpen: 0
   upgradeOpen: 0
+--- !u!114 &1752415775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752415770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11e8eb82e49dc44d8210eb6a438dbbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
+  upgradeLevel: 0
+  baseUpgradeCost: 20
+  costMultiplier: 1.5
+  upgradeCostText: {fileID: 1690284189}
 --- !u!1 &1767803606
 GameObject:
   m_ObjectHideFlags: 0
