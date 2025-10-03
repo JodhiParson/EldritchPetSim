@@ -2500,7 +2500,7 @@ MonoBehaviour:
   feedAmountText: {fileID: 1592525859}
   upgradeCost: 10
   costMultiplier: 1.5
-  feedIncreaseAmount: 6
+  feedMultiplier: 1.2
   upgradeButton: {fileID: 654924889}
   upgradeCostText: {fileID: 1690284189}
 --- !u!1 &1840960273
@@ -2631,7 +2631,7 @@ MonoBehaviour:
   feedAmountText: {fileID: 0}
   upgradeCost: 10
   costMultiplier: 1.5
-  feedIncreaseAmount: 5
+  feedMultiplier: 1.2
   upgradeButton: {fileID: 0}
   upgradeCostText: {fileID: 0}
 --- !u!222 &1840960276
