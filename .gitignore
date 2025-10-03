@@ -43,7 +43,7 @@ crash-reports/
 
 # Unity Asset Store tools
 Assets/AssetStoreTools*
-
+Something.cs
 # Large file storage (optional)
 # *.psd
 # *.tga
