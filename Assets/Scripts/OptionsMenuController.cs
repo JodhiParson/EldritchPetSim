@@ -1,3 +1,4 @@
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class OptionsMenuController : MonoBehaviour
@@ -19,5 +20,14 @@ public class OptionsMenuController : MonoBehaviour
     {
         isOpen = !isOpen; // flip the state
         optionsMenu.SetActive(isOpen);
+    }
+}
+public class UpgradeMenu : MonoBehaviour
+{
+    public GameObject upgradesMenu;
+
+    public void OpenMenu()
+    {
+        upgradesMenu.SetActive(true);
     }
 }
