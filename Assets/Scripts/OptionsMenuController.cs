@@ -1,33 +1,56 @@
+using NUnit.Framework;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
-public class OptionsMenuController : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
-    public GameObject optionsMenu; // drag your panel here in Inspector
-    public bool isOpen = false;
+    public GameObject optionsMenu;
+    public GameObject upgradeMenu;
+    public bool optionsOpen = false;
+    public bool upgradeOpen = false;
 
     void Update()
     {
-        // Only close menu if Esc is pressed AND menu is open
-        if (Input.GetKeyDown(KeyCode.Escape) && isOpen)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenu();
+            if (optionsOpen) CloseOptionsMenu();
+            if (upgradeOpen) CloseUpgradeMenu();
+
         }
     }
+    public void OpenOptionsMenu()
+    {
+        if (upgradeOpen) CloseUpgradeMenu();
 
-    // This function toggles the menu open/close
+        optionsOpen = true;
+        optionsMenu.SetActive(true);
+    }
+
+    public void CloseOptionsMenu()
+    {
+        optionsOpen = false;
+        optionsMenu.SetActive(false);
+    }
     public void ToggleMenu()
     {
-        isOpen = !isOpen; // flip the state
-        optionsMenu.SetActive(isOpen);
+        optionsOpen = !optionsOpen; // flip the state
+        optionsMenu.SetActive(optionsOpen);
     }
-}
-public class UpgradeMenu : MonoBehaviour
-{
-    public GameObject upgradesMenu;
-
-    public void OpenMenu()
+    public void OpenUpgradeMenu()
     {
-        upgradesMenu.SetActive(true);
+        if (optionsOpen) CloseOptionsMenu();
+
+        upgradeOpen = true;
+        upgradeMenu.SetActive(true);
+    }
+    public void CloseUpgradeMenu()
+    {
+        upgradeOpen = false;
+        upgradeMenu.SetActive(false);
+    }
+    public void ToggleUpgradeMenu()
+    {
+        if (upgradeOpen) CloseUpgradeMenu();
+        else OpenUpgradeMenu();
     }
 }
