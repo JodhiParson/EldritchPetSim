@@ -5,8 +5,10 @@ public class MenuController : MonoBehaviour
 {
     public GameObject optionsMenu;
     public GameObject upgradeMenu;
+    public GameObject storeMenu;
     public bool optionsOpen = false;
     public bool upgradeOpen = false;
+    public bool storeOpen = false;
 
     [Header("Slide Settings")]
     public float slideSpeed = 500f;
@@ -32,6 +34,7 @@ public class MenuController : MonoBehaviour
         {
             if (optionsOpen) CloseOptionsMenu();
             if (upgradeOpen) CloseUpgradeMenu();
+            if (storeOpen) CloseStoreMenu();
         }
 
         // Detect clicks outside the upgrade menu
@@ -102,4 +105,19 @@ public class MenuController : MonoBehaviour
     {
         return RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null);
     }
+
+    // ================= Store =================
+    public void OpenStoreMenu()
+    {
+        if (optionsOpen) CloseOptionsMenu();        
+        storeOpen = true;
+        storeMenu.SetActive(true);
+    }
+        public void CloseStoreMenu()
+    {
+        storeOpen = false;
+        storeMenu.SetActive(false);
+    }
+
+
 }

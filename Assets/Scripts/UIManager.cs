@@ -28,6 +28,10 @@ public class PetManager : MonoBehaviour
     public TMP_Text currentIdle;
     public TMP_Text upgradeCostText2;
 
+    [Header("Gatcha System")]
+    public GatchaSys gatcha;
+    public TMP_Text gatchaResTxt;
+    public Image gatchaRewardIcon;
 
     void Start()
     {
@@ -67,17 +71,17 @@ public class PetManager : MonoBehaviour
     {
         if (petHunger >= upgradeCost2)
         {
-        petHunger -= upgradeCost2;
+            petHunger -= upgradeCost2;
 
-        // Instead of always adding 2, we multiply perSec by a factor
-        idleStrength = Mathf.CeilToInt(idleStrength + perSec);
+            // Instead of always adding 2, we multiply perSec by a factor
+            idleStrength = Mathf.CeilToInt(idleStrength + perSec);
 
-        // Increase cost for next upgrade
-        upgradeCost2 = Mathf.CeilToInt(upgradeCost2 + costMultiplier2);
+            // Increase cost for next upgrade
+            upgradeCost2 = Mathf.CeilToInt(upgradeCost2 + costMultiplier2);
 
-        UpdateUI();
-        Debug.Log("Bought Idle Upgrade! Now generating " + idleStrength + " Strength/sec");
-    }
+            UpdateUI();
+            Debug.Log("Bought Idle Upgrade! Now generating " + idleStrength + " Strength/sec");
+        }
         else
         {
             Debug.Log("Not enough Strength to buy idle upgrade!");
@@ -120,10 +124,25 @@ public class PetManager : MonoBehaviour
 
         if (upgradeCostText2 != null)
             upgradeCostText2.text = "Upgrade: " + upgradeCost2;
-            
+
         if (upgradeButton2 != null)
             upgradeButton2.interactable = petHunger >= upgradeCost2;
-            
-            
+
+
+    }
+    // ================= Gatcha System =================
+    public void OnRollButton()
+    {
+        var reward = gatcha.Roll();
+        if (reward != null)
+        {
+            gatchaResTxt.text = "You got: " + reward.rewardName;
+            if (reward.icon != null)
+                gatchaRewardIcon.sprite = reward.icon;
+        }
+        else
+        {
+            gatchaResTxt.text = "Not enough currency";
+        }
     }
 }
