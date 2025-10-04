@@ -146,6 +146,7 @@ public class MenuController : MonoBehaviour
     // ================= Decorations Menu =================
     public void OpenDecMenu()
     {
+        Debug.Log("clicked 1");
         CloseAllMenus();
         decMenu.SetActive(true);
         decOpen = true;
@@ -170,6 +171,7 @@ public class MenuController : MonoBehaviour
     // ================= Store =================
     public void OpenStoreMenu()
     {
+        Debug.Log("clicked 2");
         if (optionsOpen) CloseOptionsMenu();
         storeOpen = true;
         storeMenu.SetActive(true);
