@@ -4,7 +4,7 @@ public class BunnyMovement : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public float changeDirectionTime = 2f;
-    public float stopChance = 0.2f;        // 20% chance to stop when picking new direction
+    public float stopChance = 0.2f;
     public float minStopTime = 1f;
     public float maxStopTime = 3f;
 
@@ -27,7 +27,6 @@ public class BunnyMovement : MonoBehaviour
     {
         if (isStopped)
         {
-            // Bunny is standing
             stopTimer -= Time.deltaTime;
             if (stopTimer <= 0f)
             {
@@ -39,7 +38,6 @@ public class BunnyMovement : MonoBehaviour
         }
         else
         {
-            // Move the bunny
             transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
             // Flip sprite based on horizontal direction
@@ -60,7 +58,6 @@ public class BunnyMovement : MonoBehaviour
 
     void PickNewDirection()
     {
-        // Randomly decide if bunny should stop
         if (Random.value < stopChance)
         {
             isStopped = true;
@@ -71,12 +68,20 @@ public class BunnyMovement : MonoBehaviour
 
         float x = Random.Range(-1f, 1f);
         float y = Random.Range(-1f, 1f);
-        moveDirection = new Vector2(x, y).normalized;
+        moveDirection = (new Vector2(x, y).normalized);
         timer = changeDirectionTime;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Bounce off the wall
         moveDirection = Vector2.Reflect(moveDirection, collision.contacts[0].normal);
+
+        // Trigger animation if we hit a wall
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("Bunny hit a wall!");
+            animator.SetTrigger("HitWall"); // Make sure you have a HitWall trigger in Animator
+        }
     }
 }
