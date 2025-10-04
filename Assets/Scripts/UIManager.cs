@@ -50,7 +50,7 @@ public class PetManager : MonoBehaviour
     public void FeedPet()
     {
         petHunger += feedAmount;
-        Debug.Log("Feeding the pet... Strength is now: " + petHunger);
+        // Debug.Log("Feeding the pet... Strength is now: " + petHunger);
         UpdateUI();
     }
 
@@ -107,7 +107,7 @@ public class PetManager : MonoBehaviour
             petHunger += idleStrength * ticks;
             idleTimer -= ticks;
 
-            Debug.Log("Idle added " + (idleStrength * ticks) + " Strength. Total: " + petHunger);
+            // Debug.Log("Idle added " + (idleStrength * ticks) + " Strength. Total: " + petHunger);
             UpdateUI();
         }
     }
