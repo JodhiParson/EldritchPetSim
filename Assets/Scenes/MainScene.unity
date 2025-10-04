@@ -3923,7 +3923,7 @@ GameObject:
   - component: {fileID: 1939508918}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: OptionsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
