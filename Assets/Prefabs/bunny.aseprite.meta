@@ -81,7 +81,7 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
@@ -94,11 +94,11 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638951312829720802
+  platformSettingsDirtyTick: 638951344906025637
   textureAssetName: 
   singleSpriteImportData:
   - name: 
