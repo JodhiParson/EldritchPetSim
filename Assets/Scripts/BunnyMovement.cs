@@ -4,13 +4,13 @@ using System.Collections;
 public class BunnyMovement : MonoBehaviour
 {
     [Header("Wander Area")]
-    public float wanderWidth = 18;
+    public float wanderWidth = 9;
     public float wanderHeight = 2;
     public Vector2 startingPosition;
 
     [Header("Movement Settings")]
-    public float speed = 5;
-    public float stopTime = 5f; // seconds stopped after hitting wall
+    public float speed = 4;
+    public float stopTime = 4f; // seconds stopped after hitting wall
 
     private Vector2 target;
     private Rigidbody2D rb;

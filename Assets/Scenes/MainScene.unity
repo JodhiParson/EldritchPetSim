@@ -4565,10 +4565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68da2f71f5f1aea4dbd87a6c98e2ba60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderWidth: 18
+  wanderWidth: 10
   wanderHeight: 2
   startingPosition: {x: 0, y: 0}
-  speed: 1
+  speed: 10
   stopTime: 5
 --- !u!50 &2088958831
 Rigidbody2D:
