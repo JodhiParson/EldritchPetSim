@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor.Rendering.Universal;
+using System.Collections.Generic;
 
 public class PetManager : MonoBehaviour
 {
@@ -28,10 +29,17 @@ public class PetManager : MonoBehaviour
     public TMP_Text currentIdle;
     public TMP_Text upgradeCostText2;
 
-    [Header("Gatcha System")]
-    public GatchaSys gatcha;
-    public TMP_Text gatchaResTxt;
-    public Image gatchaRewardIcon;
+    [Header("Gacha System")]
+    public GachaSys gacha;
+    public TMP_Text gachaResTxt;
+    public Image gachaRewardIcon;
+    public Button gachaButton;
+
+
+    [Header("Inventory")]
+    public TMP_Text inventoryText;
+    public List<GachaReward> inventory = new List<GachaReward>();
+
 
     void Start()
     {
@@ -43,7 +51,6 @@ public class PetManager : MonoBehaviour
     {
         petHunger += feedAmount;
         Debug.Log("Feeding the pet... Strength is now: " + petHunger);
-        UpdateUI();
         UpdateUI();
     }
 
@@ -128,21 +135,47 @@ public class PetManager : MonoBehaviour
         if (upgradeButton2 != null)
             upgradeButton2.interactable = petHunger >= upgradeCost2;
 
+        if (gachaButton != null && gacha != null)
+            gachaButton.interactable = petHunger >= gacha.rollCost;
+
 
     }
     // ================= Gatcha System =================
     public void OnRollButton()
     {
-        var reward = gatcha.Roll();
+        if (gacha == null || gachaResTxt == null)
+            return;
+
+        if (petHunger < gacha.rollCost)
+        {
+            gachaResTxt.text = "Not enough Strength!";
+            return;
+        }
+
+        GachaReward reward = gacha.Roll();
         if (reward != null)
         {
-            gatchaResTxt.text = "You got: " + reward.rewardName;
-            if (reward.icon != null)
-                gatchaRewardIcon.sprite = reward.icon;
+            inventory.Add(reward);
+            gachaResTxt.text = "You got: " + reward.rewardName;
+            if (gachaRewardIcon != null && reward.icon != null)
+                gachaRewardIcon.sprite = reward.icon;
+
+            UpdateInventoryUI();
         }
         else
         {
-            gatchaResTxt.text = "Not enough currency";
+            gachaResTxt.text = "Not enough Strength.";
+        }
+
+        void UpdateInventoryUI()
+        {
+            if (inventoryText == null) return;
+            inventoryText.text = "Inventory:\n";
+            foreach (var item in inventory)
+            {
+                inventoryText.text += "- " + item.rewardName + "\n";
+            }
+            UpdateUI();
         }
     }
 }

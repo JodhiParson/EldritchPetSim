@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class GatchaReward
+[System.Serializable]
+public class GachaReward
 {
     public string rewardName;   // Name of the item
     public Sprite icon;         // Icon to show in UI
