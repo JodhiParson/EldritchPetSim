@@ -115,10 +115,10 @@ public class MenuController : MonoBehaviour
         optionsMenu.SetActive(false);
     }
 
-    public void ToggleMenu()
+    public void ToggleOptionsMenu()
     {
-        if (optionsOpen) CloseOptionsMenu();
-        else OpenOptionsMenu();
+        optionsOpen = !optionsOpen;
+        optionsMenu.SetActive(optionsOpen);
     }
 
     // ================= Upgrade Menu =================
