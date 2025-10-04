@@ -67,8 +67,11 @@ public class MenuController : MonoBehaviour
         }
         if (optionsOpen && Input.GetMouseButtonDown(0))
         {
-            RectTransform optionsRect = optionsMenu.GetComponent<RectTransform>();
-            if (!IsPointerOverUIObject(optionsRect))
+            GameObject clickedObject = EventSystem.current.currentSelectedGameObject;
+
+            // Ignore if clicked inside menu or on the toggle button
+            if (!IsPointerOverUIObject(optionsMenu.GetComponent<RectTransform>()) &&
+                (clickedObject == null || clickedObject.tag != "OptionsButton"))
             {
                 CloseOptionsMenu();
             }
