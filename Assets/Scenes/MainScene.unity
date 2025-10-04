@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.51197046, g: 0.54385144, b: 0.5566038, a: 1}
+  m_Color: {r: 0.26432896, g: 0.5014582, b: 0.5660378, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2082,10 +2082,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewards:
   - rewardName: Common Sword
-    icon: {fileID: 7482667652216324306, guid: d03b225543e42bf429b5d28065c0a091, type: 3}
+    icon: {fileID: -6960903314270103029, guid: 140e800b94d75294fa2048e448031826, type: 3}
     dropRate: 70
   - rewardName: Rare Wand
-    icon: {fileID: 7482667652216324306, guid: 4c65f183d37d2604e87a5288a3160729, type: 3}
+    icon: {fileID: -7969374483246059072, guid: 4462eedf938689a4ebefbf30a0397883, type: 3}
     dropRate: 25
   - rewardName: Legendary Dragon
     icon: {fileID: -2413806693520163455, guid: df2a6a5ef9962b040aa0221e5f878a16, type: 3}
@@ -2811,7 +2811,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000045776, y: 0}
-  m_SizeDelta: {x: 457.9474, y: 457.9474}
+  m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1436705342
 GameObject:
@@ -2987,7 +2987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -646.63}
+  m_AnchoredPosition: {x: 0, y: -669.3}
   m_SizeDelta: {x: 0, y: -461.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529573495
@@ -3456,7 +3456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Hunger
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3775,7 +3775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3827,7 +3827,7 @@ RectTransform:
   m_GameObject: {fileID: 1955934542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1939508916}
@@ -3857,7 +3857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: +
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
