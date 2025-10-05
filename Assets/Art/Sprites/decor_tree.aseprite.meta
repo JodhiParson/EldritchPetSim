@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b0c4f3ab2d783d4cb0f7ce6bfb81276
+guid: 2557e9b5c53222445863782d9f1556d7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: decor_tree_1
+  - name: decor_tree
     originalName: 
     pivot: {x: 0.47457626, y: -0.11320755}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 59
       height: 53
-    spriteID: 2dd4af1729bbafb49a582373201155ba
+    spriteID: 4fa8d830ff01f5b47bdaeaa3587ac90e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,13 +147,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1078193676
-    name: decor_tree_1
+    guid: 1099744100
+    name: decor_tree
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: decor_tree_1
+    - name: decor_tree
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -161,7 +161,7 @@ ScriptedImporter:
         y: 6
         width: 59
         height: 53
-      spriteId: 2dd4af1729bbafb49a582373201155ba
+      spriteId: 4fa8d830ff01f5b47bdaeaa3587ac90e
     linkedCells: []
     parentIndex: -1
   platformSettings:
