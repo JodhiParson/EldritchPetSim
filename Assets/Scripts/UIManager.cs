@@ -40,6 +40,11 @@ public class PetManager : MonoBehaviour
     public TMP_Text inventoryText;
     public List<GachaReward> inventory = new List<GachaReward>();
 
+    [Header("Bunny Components")]
+    public Animator bunnyAnimator;
+    public AudioSource bunnyAudio;
+
+
 
     void Start()
     {
@@ -49,8 +54,34 @@ public class PetManager : MonoBehaviour
     // ================= Feed Pet =================
     public void FeedPet()
     {
+        Debug.Log("Feeding the pet...");
+
+        // ✅ Play bunny animation
+        if (bunnyAnimator != null)
+        {
+            bunnyAnimator.SetTrigger("Eat");
+            Debug.Log("Triggered Eat animation.");
+        }
+        else
+        {
+            Debug.LogWarning("No Animator assigned to Bunny!");
+        }
+
+        // ✅ Play sound
+        if (bunnyAudio != null)
+        {
+            bunnyAudio.Play();
+            Debug.Log("Played eat sound.");
+        }
+        else
+        {
+            Debug.LogWarning("No AudioSource assigned to Bunny!");
+        }
+
+        // ✅ Update hunger
         petHunger += feedAmount;
-        // Debug.Log("Feeding the pet... Strength is now: " + petHunger);
+        Debug.Log("Strength is now: " + petHunger);
+
         UpdateUI();
     }
 

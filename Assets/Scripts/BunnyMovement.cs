@@ -59,21 +59,21 @@ public class BunnyMovement : MonoBehaviour
     }
 }
 
-    private bool IsInsideBounds(Vector2 pos)
-    {
-        float halfWidth = wanderWidth / 2f;
-        float halfHeight = wanderHeight / 2f;
+    // private bool IsInsideBounds(Vector2 pos)
+    // {
+    //     float halfWidth = wanderWidth / 2f;
+    //     float halfHeight = wanderHeight / 2f;
 
-        bool inside = pos.x >= startingPosition.x - halfWidth &&
-                      pos.x <= startingPosition.x + halfWidth &&
-                      pos.y >= startingPosition.y - halfHeight &&
-                      pos.y <= startingPosition.y + halfHeight;
+    //     bool inside = pos.x >= startingPosition.x - halfWidth &&
+    //                   pos.x <= startingPosition.x + halfWidth &&
+    //                   pos.y >= startingPosition.y - halfHeight &&
+    //                   pos.y <= startingPosition.y + halfHeight;
 
-        if (!inside)
-            Debug.Log("Position " + pos + " is OUTSIDE bounds.");
+    //     if (!inside)
+    //         Debug.Log("Position " + pos + " is OUTSIDE bounds.");
 
-        return inside;
-    }
+    //     return inside;
+    // }
 
     private void OnEnable()
     {
@@ -116,7 +116,7 @@ public class BunnyMovement : MonoBehaviour
     animator.SetBool("isMoving", false);
 
     // Play one of three idle animations
-    int idleIndex = Random.Range(0, 2);
+    int idleIndex = Random.Range(0, 3);
     animator.SetInteger("idleIndex", idleIndex);
     Debug.Log("Idle animation at target: Idle" + idleIndex);
 
