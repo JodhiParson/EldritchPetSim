@@ -77,11 +77,13 @@ public class PetManager : MonoBehaviour
         {
             Debug.LogWarning("No AudioSource assigned to Bunny!");
         }
-
         // ✅ Update hunger
         petHunger += feedAmount;
         Debug.Log("Strength is now: " + petHunger);
-
+        if (StrengthPopUpGenerator.current != null)
+        {
+            StrengthPopUpGenerator.current.CreatePopup("+" + feedAmount);
+        }
         UpdateUI();
     }
 
@@ -137,7 +139,10 @@ public class PetManager : MonoBehaviour
             int ticks = Mathf.FloorToInt(idleTimer);
             petHunger += idleStrength * ticks;
             idleTimer -= ticks;
-
+            if (StrengthPopUpGenerator.current != null && (idleStrength * ticks) > 0)
+            {
+                StrengthPopUpGenerator.current.CreatePopup("+" + (idleStrength * ticks));
+            }
             // Debug.Log("Idle added " + (idleStrength * ticks) + " Strength. Total: " + petHunger);
             UpdateUI();
         }
