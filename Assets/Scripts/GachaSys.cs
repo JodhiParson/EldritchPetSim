@@ -9,41 +9,46 @@ public class GachaSys : MonoBehaviour
 
     [Header("Economy")]
     public int rollCost = 100;
-    public PetManager pethunger;
+    public PetManager pethunger;         // reference for cost deduction
+    public Inventory playerInventory;    // reference for inventory
 
     public GachaReward Roll()
-{
-    if (pethunger == null) return null;
-    if (pethunger.petHunger < rollCost) return null;
-
-    pethunger.petHunger -= rollCost;
-
-    // Calculate total drop rate
-    float totalRate = 0f;
-    foreach (var reward in rewards)
     {
-        totalRate += reward.dropRate;
-    }
+        if (pethunger == null) return null;
+        if (pethunger.petHunger < rollCost) return null;
+
+        // Deduct roll cost
+        pethunger.petHunger -= rollCost;
+
+        // Calculate total drop rate
+        float totalRate = 0f;
+        foreach (var reward in rewards)
+        {
+            totalRate += reward.dropRate;
+        }
 
         if (totalRate <= 0)
         {
             Debug.LogWarning("Total Drop rate is 0%");
+            return null;
         }
 
-    float roll = Random.value * totalRate;
-    float cumulative = 0f;
+        // Roll
+        float roll = Random.value * totalRate;
+        float cumulative = 0f;
 
-    foreach (var reward in rewards)
-    {
-        cumulative += reward.dropRate;
-        if (roll < cumulative) // Use < instead of <=
+        foreach (var reward in rewards)
         {
-            Debug.Log("Rolled: " + reward.rewardName + " (roll=" + roll + ")");
-            return reward;
+            cumulative += reward.dropRate;
+            if (roll < cumulative)
+            {
+                // Only return the reward here. DO NOT add to inventory.
+                Debug.Log("Rolled: " + reward.rewardItem.itemName + " (roll=" + roll + ")");
+                return reward;
+            }
         }
-    }
 
-    // Fallback (should never reach here)
-    return rewards[rewards.Count - 1];
-}
+        // Fallback
+        return rewards[rewards.Count - 1];
+    }
 }

@@ -1787,13 +1787,14 @@ GameObject:
   - component: {fileID: 756684202}
   - component: {fileID: 756684204}
   - component: {fileID: 756684203}
+  - component: {fileID: 756684205}
   m_Layer: 5
   m_Name: DecorationsInv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &756684202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1805,13 +1806,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1337747088}
   m_Father: {fileID: 1400467684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00018310547, y: -777.42004}
-  m_SizeDelta: {x: 0, y: -461.08}
+  m_AnchoredPosition: {x: 0, y: -943.71}
+  m_SizeDelta: {x: 0, y: -208.7177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756684203
 MonoBehaviour:
@@ -1851,6 +1853,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756684201}
   m_CullTransparentMesh: 1
+--- !u!114 &756684205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756684201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df6134c4687d1347a3742966974d50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 1456654363}
+  slotsParent: {fileID: 1337747088}
+  slotPrefab: {fileID: 2738748874741272857, guid: 640cf3e8f54a3f4438fc8ef37655c658, type: 3}
+  emptySlotIcon: {fileID: 0}
 --- !u!1 &837876122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,17 +2304,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewards:
-  - rewardName: Rock
-    icon: {fileID: -6960903314270103029, guid: 140e800b94d75294fa2048e448031826, type: 3}
-    dropRate: 70
-  - rewardName: Rock Wall
-    icon: {fileID: -7969374483246059072, guid: 4462eedf938689a4ebefbf30a0397883, type: 3}
+  - rewardItem: {fileID: 11400000, guid: b3758f97a8ec31d4ea404b34b520dd74, type: 2}
+    dropRate: 75
+  - rewardItem: {fileID: 11400000, guid: 8b6eba9e1cff3c0479e6f1a9e387d736, type: 2}
     dropRate: 25
-  - rewardName: Legendary Dragon
-    icon: {fileID: -2413806693520163455, guid: df2a6a5ef9962b040aa0221e5f878a16, type: 3}
-    dropRate: 5
   rollCost: 100
   pethunger: {fileID: 1767803609}
+  playerInventory: {fileID: 1456654363}
 --- !u!4 &989258772
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,6 +2861,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162025447}
   m_CullTransparentMesh: 1
+--- !u!1 &1337747087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337747088}
+  - component: {fileID: 1337747090}
+  - component: {fileID: 1337747089}
+  - component: {fileID: 1337747091}
+  m_Layer: 5
+  m_Name: InventoryPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1337747088
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337747087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 756684202}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.4984131, y: -10.489716}
+  m_SizeDelta: {x: -266.7349, y: -212.7885}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1337747089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337747087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1337747090
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337747087}
+  m_CullTransparentMesh: 1
+--- !u!114 &1337747091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337747087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 150, y: 150}
+  m_Spacing: {x: 20, y: 20}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1001 &1377408463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3273,6 +3387,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436705342}
   m_CullTransparentMesh: 1
+--- !u!1 &1456654362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456654364}
+  - component: {fileID: 1456654363}
+  m_Layer: 0
+  m_Name: Inventory Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1456654363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456654362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ca20d3d24f9dd4593ff341065e1095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
+--- !u!4 &1456654364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456654362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 495.96075, y: -143.46985, z: 6.974787}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529573493
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,7 +3470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00018310547, y: -777.42004}
+  m_AnchoredPosition: {x: 0, y: -815.78}
   m_SizeDelta: {x: 0, y: -461.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529573495
@@ -3743,7 +3902,8 @@ MonoBehaviour:
   gachaRewardIcon: {fileID: 1412325658}
   gachaButton: {fileID: 1133870613}
   inventoryText: {fileID: 0}
-  inventory: []
+  playerInventory: {fileID: 1456654363}
+  inventoryUI: {fileID: 756684205}
 --- !u!114 &1767803610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3901,7 +4061,8 @@ MonoBehaviour:
   gachaRewardIcon: {fileID: 0}
   gachaButton: {fileID: 0}
   inventoryText: {fileID: 0}
-  inventory: []
+  playerInventory: {fileID: 0}
+  inventoryUI: {fileID: 0}
 --- !u!222 &1840960276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4647,3 +4808,4 @@ SceneRoots:
   - {fileID: 1767803608}
   - {fileID: 1752415772}
   - {fileID: 989258772}
+  - {fileID: 1456654364}
