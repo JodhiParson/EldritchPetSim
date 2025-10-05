@@ -26,7 +26,7 @@ AnimationClip:
       value: {fileID: -8585655637485237756, guid: 5997b73a13beab14cb0a82c38613618f, type: 3}
     - time: 0.29999924
       value: {fileID: 6622763921473314348, guid: 5997b73a13beab14cb0a82c38613618f, type: 3}
-    - time: 0.39999962
+    - time: 0.4
       value: {fileID: -6672566294932935232, guid: 5997b73a13beab14cb0a82c38613618f, type: 3}
     - time: 0.5
       value: {fileID: -1861444166734091827, guid: 5997b73a13beab14cb0a82c38613618f, type: 3}
@@ -96,6 +96,69 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: a
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 4c3ce0634a133a54b8837909679ac0ec, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.41
     functionName: 
     data: 
     objectReferenceParameter: {fileID: 0}
