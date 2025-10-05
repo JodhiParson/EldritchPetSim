@@ -2,7 +2,6 @@ using UnityEngine;
 [System.Serializable]
 public class GachaReward
 {
-    public string rewardName;   // Name of the item
-    public Sprite icon;         // Icon to show in UI
+    public ItemData rewardItem;   // Name of the item
     public float dropRate;      // Chance (weight)
 }

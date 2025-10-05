@@ -38,7 +38,8 @@ public class PetManager : MonoBehaviour
 
     [Header("Inventory")]
     public TMP_Text inventoryText;
-    public List<GachaReward> inventory = new List<GachaReward>();
+    public Inventory playerInventory;
+    public InventoryUI inventoryUI;
 
     [Header("Bunny Components")]
     public Animator bunnyAnimator;
@@ -179,39 +180,16 @@ public class PetManager : MonoBehaviour
     // ================= Gatcha System =================
     public void OnRollButton()
     {
-        if (gacha == null || gachaResTxt == null)
-            return;
-
-        if (petHunger < gacha.rollCost)
-        {
-            gachaResTxt.text = "Not enough Strength!";
-            return;
-        }
-
         GachaReward reward = gacha.Roll();
         if (reward != null)
         {
-            inventory.Add(reward);
-            gachaResTxt.text = "You got: " + reward.rewardName;
-            if (gachaRewardIcon != null && reward.icon != null)
-                gachaRewardIcon.sprite = reward.icon;
+            playerInventory.AddItem(reward.rewardItem); // Only add here
+            gachaResTxt.text = "You got: " + reward.rewardItem.itemName;
 
-            UpdateInventoryUI();
-        }
-        else
-        {
-            gachaResTxt.text = "Not enough Strength.";
-        }
+            if (gachaRewardIcon != null && reward.rewardItem.icon != null)
+                gachaRewardIcon.sprite = reward.rewardItem.icon;
 
-        void UpdateInventoryUI()
-        {
-            if (inventoryText == null) return;
-            inventoryText.text = "Inventory:\n";
-            foreach (var item in inventory)
-            {
-                inventoryText.text += "- " + item.rewardName + "\n";
-            }
-            UpdateUI();
+            inventoryUI.UpdateInventoryUI();
         }
     }
 }
