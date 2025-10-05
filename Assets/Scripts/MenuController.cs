@@ -3,14 +3,16 @@ using UnityEngine.EventSystems;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject optionsMenu;
+    public GameObject menu;
     public GameObject upgradeMenu;
     public GameObject storeMenu;
     public GameObject decMenu;
-    public bool optionsOpen = false;
+    public GameObject optionsMenu;
+    public bool menuOpen = false;
     public bool upgradeOpen = false;
     public bool storeOpen = false;
     public bool decOpen = false;
+    public bool optionsOpen = false;
 
     [Header("Slide Settings")]
     public float slideSpeed = 500f;
@@ -21,6 +23,11 @@ public class MenuController : MonoBehaviour
     private RectTransform decRect;
     private Vector2 decClosedPos;
     private Vector2 decOpenPos;
+
+    private RectTransform optionsRect;
+    private Vector2 optionsClosedPos;
+    private Vector2 optionsOpenPos;
+
     void Start()
     {
         if (upgradeMenu != null)
@@ -43,7 +50,22 @@ public class MenuController : MonoBehaviour
             decOpenPos = decClosedPos + new Vector2(0, decRect.rect.height);
             decMenu.SetActive(false); // start closed
         }
-    
+        if (optionsMenu != null)
+        {
+            optionsRect = optionsMenu.GetComponent<RectTransform>();
+            if (optionsRect == null)
+            {
+                Debug.LogError("Options menu is missing RectTransform!");
+                return;
+            }
+
+            optionsClosedPos = optionsRect.anchoredPosition;
+            optionsOpenPos = optionsClosedPos + new Vector2(-optionsRect.rect.width * 2, 0);
+            // optionsOpenPos = optionsClosedPos + new Vector2(0, 0);
+            optionsMenu.SetActive(false); // start closed
+        }
+
+
     }
 
     void Update()
@@ -51,7 +73,7 @@ public class MenuController : MonoBehaviour
         // Close menus with Escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (optionsOpen) CloseOptionsMenu();
+            if (menuOpen) CloseMenu();
             if (upgradeOpen) CloseUpgradeMenu();
             if (storeOpen) CloseStoreMenu();
             if (decOpen) CloseDecMenu();
@@ -65,21 +87,27 @@ public class MenuController : MonoBehaviour
                 CloseUpgradeMenu();
             }
         }
-        if (optionsOpen && Input.GetMouseButtonDown(0))
+        if (menuOpen && Input.GetMouseButtonDown(0))
         {
             GameObject clickedObject = EventSystem.current.currentSelectedGameObject;
 
             // Ignore if clicked inside menu or on the toggle button
-            if (!IsPointerOverUIObject(optionsMenu.GetComponent<RectTransform>()) &&
+            if (!IsPointerOverUIObject(menu.GetComponent<RectTransform>()) &&
                 (clickedObject == null || clickedObject.tag != "OptionsButton"))
             {
-                CloseOptionsMenu();
+                CloseMenu();
             }
         }
         if (decOpen && Input.GetMouseButtonDown(0))
         {
             if (!IsPointerOverUIObject(decRect))
                 CloseDecMenu();
+        }
+
+        if (optionsOpen && Input.GetMouseButtonDown(0))
+        {
+            if (!IsPointerOverUIObject(optionsRect))
+                CloseOptionsMenu();
         }
 
         // Smoothly slide upgrade menu
@@ -102,26 +130,39 @@ public class MenuController : MonoBehaviour
             if (!decOpen && Vector2.Distance(decRect.anchoredPosition, decClosedPos) < 0.1f)
                 decMenu.SetActive(false);
         }
+        if (optionsRect != null)
+        {
+            Vector2 target = optionsOpen ? optionsOpenPos : optionsClosedPos;
+            optionsRect.anchoredPosition = Vector2.MoveTowards(optionsRect.anchoredPosition, target, slideSpeed * Time.deltaTime);
+
+            if (!optionsOpen && Vector2.Distance(optionsRect.anchoredPosition, optionsClosedPos) < 0.1f)
+                optionsMenu.SetActive(false);
+        }
     }
 
-    // ================= Options Menu =================
-    public void OpenOptionsMenu()
+    // ================= Helper =================
+    private bool IsPointerOverUIObject(RectTransform rect)
+    {
+        return RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null);
+    }
+    // ================= Menu =================
+    public void OpenMenu()
     {
         CloseAllMenus();
-        optionsOpen = true;
-        optionsMenu.SetActive(true);
+        menuOpen = true;
+        menu.SetActive(true);
     }
 
-    public void CloseOptionsMenu()
+    public void CloseMenu()
     {
-        optionsOpen = false;
-        optionsMenu.SetActive(false);
+        menuOpen = false;
+        menu.SetActive(false);
     }
 
-    public void ToggleOptionsMenu()
+    public void ToggleMenu()
     {
-        optionsOpen = !optionsOpen;
-        optionsMenu.SetActive(optionsOpen);
+        menuOpen = !menuOpen;
+        menu.SetActive(menuOpen);
     }
 
     // ================= Upgrade Menu =================
@@ -157,22 +198,17 @@ public class MenuController : MonoBehaviour
         decOpen = false;
     }
 
-    public void ToggleDecMenu()
-    {
-        if (decOpen) CloseDecMenu();
-        else OpenDecMenu();
-    }
-    // ================= Helper =================
-    private bool IsPointerOverUIObject(RectTransform rect)
-    {
-        return RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null);
-    }
+    // public void ToggleDecMenu()
+    // {
+    //     if (decOpen) CloseDecMenu();
+    //     else OpenDecMenu();
+    // }
 
     // ================= Store =================
     public void OpenStoreMenu()
     {
         Debug.Log("clicked 2");
-        if (optionsOpen) CloseOptionsMenu();
+        if (menuOpen) CloseMenu();
         storeOpen = true;
         storeMenu.SetActive(true);
     }
@@ -183,9 +219,29 @@ public class MenuController : MonoBehaviour
     }
     private void CloseAllMenus()
     {
-        if (optionsOpen) CloseOptionsMenu();
+        if (menuOpen) CloseMenu();
         if (upgradeOpen) CloseUpgradeMenu();
         if (storeOpen) CloseStoreMenu();
         if (decOpen) CloseDecMenu();
     }
+
+    // ================= Options Menu =================
+
+    public void OpenOptionsMenu()
+    {
+        // Debug.Log("clicked 2");
+        CloseAllMenus();
+        optionsMenu.SetActive(true);
+        optionsOpen = true;
+    }
+    public void CloseOptionsMenu()
+    {
+        optionsOpen = false;
+    }
+
+    // public void ToggleOptionsMenu()
+    // {
+    //     if (optionsOpen) CloseDecMenu();
+    //     else OpenDecMenu();
+    // }
 }
