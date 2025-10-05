@@ -192,4 +192,14 @@ public class PetManager : MonoBehaviour
             inventoryUI.UpdateInventoryUI();
         }
     }
+    public void ExitGame()
+    {
+        Debug.Log("Exiting game...");
+        Application.Quit();
+
+        // for testing
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
 }
