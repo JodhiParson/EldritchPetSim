@@ -8,11 +8,13 @@ public class MenuController : MonoBehaviour
     public GameObject storeMenu;
     public GameObject decMenu;
     public GameObject optionsMenu;
+    public GameObject ritualMenu;
     public bool menuOpen = false;
     public bool upgradeOpen = false;
     public bool storeOpen = false;
     public bool decOpen = false;
     public bool optionsOpen = false;
+    public bool ritualOpen = false;
 
     [Header("Slide Settings")]
     public float slideSpeed = 500f;
@@ -27,6 +29,9 @@ public class MenuController : MonoBehaviour
     private RectTransform optionsRect;
     private Vector2 optionsClosedPos;
     private Vector2 optionsOpenPos;
+    private RectTransform ritualRect;
+    private Vector2 ritualClosedPos;
+    private Vector2 ritualOpenPos;
 
     void Start()
     {
@@ -64,6 +69,20 @@ public class MenuController : MonoBehaviour
             // optionsOpenPos = optionsClosedPos + new Vector2(0, 0);
             optionsMenu.SetActive(false); // start closed
         }
+        if (ritualMenu != null)
+        {
+            ritualRect = ritualMenu.GetComponent<RectTransform>();
+            if (ritualRect == null)
+            {
+                Debug.LogError("ritual menu is missing RectTransform!");
+                return;
+            }
+
+            ritualClosedPos = ritualRect.anchoredPosition;
+            ritualOpenPos = ritualClosedPos + new Vector2(0, ritualRect.rect.height);
+            // ritualOpenPos = ritualClosedPos + new Vector2(0, 0);
+            ritualMenu.SetActive(false); // start closed
+        }
 
 
     }
@@ -77,6 +96,7 @@ public class MenuController : MonoBehaviour
             if (upgradeOpen) CloseUpgradeMenu();
             if (storeOpen) CloseStoreMenu();
             if (decOpen) CloseDecMenu();
+            if (ritualOpen) CloseRitualMenu();
         }
 
         // Detect clicks outside the upgrade menu
@@ -109,6 +129,14 @@ public class MenuController : MonoBehaviour
             if (!IsPointerOverUIObject(optionsRect))
                 CloseOptionsMenu();
         }
+        if (ritualOpen && Input.GetMouseButtonDown(0))
+        {
+            if (!IsPointerOverUIObject(ritualRect))
+            {
+                CloseRitualMenu();
+            }
+        }
+
 
         // Smoothly slide upgrade menu
         if (upgradeRect != null)
@@ -120,6 +148,18 @@ public class MenuController : MonoBehaviour
             if (!upgradeOpen && Vector2.Distance(upgradeRect.anchoredPosition, upgradeClosedPos) < 0.1f)
             {
                 upgradeMenu.SetActive(false);
+            }
+        }
+        // Smoothly slide upgrade menu
+        if (ritualRect != null)
+        {
+            Vector2 target = ritualOpen ? ritualOpenPos : ritualClosedPos;
+            ritualRect.anchoredPosition = Vector2.MoveTowards(ritualRect.anchoredPosition, target, slideSpeed * Time.deltaTime);
+
+            // Optionally deactivate when fully closed
+            if (!ritualOpen && Vector2.Distance(ritualRect.anchoredPosition, ritualClosedPos) < 0.1f)
+            {
+                ritualMenu.SetActive(false);
             }
         }
         if (decRect != null)
@@ -223,6 +263,7 @@ public class MenuController : MonoBehaviour
         if (upgradeOpen) CloseUpgradeMenu();
         if (storeOpen) CloseStoreMenu();
         if (decOpen) CloseDecMenu();
+        if (ritualOpen) CloseRitualMenu();
     }
 
     // ================= Options Menu =================
@@ -237,6 +278,25 @@ public class MenuController : MonoBehaviour
     public void CloseOptionsMenu()
     {
         optionsOpen = false;
+    }
+    
+    public void OpenRitualMenu()
+    {
+        CloseAllMenus();
+        ritualOpen = true;
+        ritualMenu.SetActive(true);
+    }
+
+    public void CloseRitualMenu()
+    {
+        ritualOpen = false;
+        // panel will slide down and deactivate automatically
+    }
+
+    public void ToggleRitualMenu()
+    {
+        if (ritualOpen) CloseRitualMenu();
+        else OpenRitualMenu();
     }
 
     // public void ToggleOptionsMenu()

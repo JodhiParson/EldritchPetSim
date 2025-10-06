@@ -255,7 +255,9 @@ public class PetManager : MonoBehaviour
     if (petHunger >= currentCost)
     {
         petHunger -= currentCost;
-        idleStrength += idleIncrements[index];
+
+        // Multiply idle increment similar to feed multiplier
+        idleIncrements[index] = Mathf.CeilToInt(idleIncrements[index] * feedMultiplier); // or a separate multiplier if you want
         idleUpgradeCosts[index] = Mathf.CeilToInt(currentCost * idleCostMultiplier);
 
         // Optional: unlock next idle upgrade

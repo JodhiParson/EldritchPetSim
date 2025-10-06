@@ -4290,9 +4290,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: DoRitual
+      - m_Target: {fileID: 1752415774}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OpenRitualMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15237,11 +15237,13 @@ MonoBehaviour:
   storeMenu: {fileID: 325330540}
   decMenu: {fileID: 756684201}
   optionsMenu: {fileID: 1408720210}
+  ritualMenu: {fileID: 562772169}
   menuOpen: 0
   upgradeOpen: 0
   storeOpen: 0
   decOpen: 0
   optionsOpen: 0
+  ritualOpen: 0
   slideSpeed: 2000
 --- !u!1 &1762978079
 GameObject:
@@ -15618,8 +15620,6 @@ MonoBehaviour:
   costMultiplier: 1.2
   feedMultiplier: 1.1
   idleUpgradeCost: 20
-  idleUpgradeButton: {fileID: 0}
-  idleUpgradeCostText: {fileID: 0}
   costMultiplier2: 1.1
   perSec: 3
   currentIdle: {fileID: 0}
@@ -15627,18 +15627,18 @@ MonoBehaviour:
   idleUnlocked: 010000000000
   idleIncrements: 0300000014000000c8000000d0070000204e0000400d0300
   idleCostMultiplier: 1.2
-  idleUpgradeButton0: {fileID: 0}
-  idleUpgradeButton1: {fileID: 0}
-  idleUpgradeButton2: {fileID: 0}
-  idleUpgradeButton3: {fileID: 0}
-  idleUpgradeButton4: {fileID: 0}
-  idleUpgradeButton5: {fileID: 0}
-  idleUpgradeCostText0: {fileID: 0}
-  idleUpgradeCostText1: {fileID: 0}
-  idleUpgradeCostText2: {fileID: 0}
-  idleUpgradeCostText3: {fileID: 0}
-  idleUpgradeCostText4: {fileID: 0}
-  idleUpgradeCostText5: {fileID: 0}
+  idleUpgradeButton0: {fileID: 1553187321}
+  idleUpgradeButton1: {fileID: 234412902}
+  idleUpgradeButton2: {fileID: 622552764}
+  idleUpgradeButton3: {fileID: 248398945}
+  idleUpgradeButton4: {fileID: 1646117048}
+  idleUpgradeButton5: {fileID: 1738401708}
+  idleUpgradeCostText0: {fileID: 2074468179}
+  idleUpgradeCostText1: {fileID: 957856792}
+  idleUpgradeCostText2: {fileID: 552219161}
+  idleUpgradeCostText3: {fileID: 1141829730}
+  idleUpgradeCostText4: {fileID: 973583037}
+  idleUpgradeCostText5: {fileID: 315378703}
   gacha: {fileID: 989258771}
   gachaResTxt: {fileID: 879932990}
   gachaRewardIcon: {fileID: 1412325658}
@@ -16508,8 +16508,6 @@ MonoBehaviour:
   costMultiplier: 10
   feedMultiplier: 1
   idleUpgradeCost: 20
-  idleUpgradeButton: {fileID: 0}
-  idleUpgradeCostText: {fileID: 0}
   costMultiplier2: 10
   perSec: 2
   currentIdle: {fileID: 0}
