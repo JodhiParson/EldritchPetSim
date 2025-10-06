@@ -14,7 +14,7 @@ public class PetManager : MonoBehaviour
 
     [Header("Upgrade System")]
     public int upgradeCost = 10;         // Starting upgrade cost
-    public int costMultiplier = 10;  // How much cost increases per upgrade
+    public float costMultiplier = 10;  // How much cost increases per upgrade
     public int feedMultiplier = 1;   // How much feedAmount increases per upgrade
     public Button upgradeButton;         // Upgrade button
     public TMP_Text upgradeCostText;     // Text showing upgrade cost
@@ -23,7 +23,7 @@ public class PetManager : MonoBehaviour
 
     public int idleStrength = 0;
     public int upgradeCost2 = 20;
-    public int costMultiplier2 = 10;
+    public float costMultiplier2 = 10;
     public int perSec = 2;
     public Button upgradeButton2;         // Upgrade button
     public TMP_Text currentIdle;
@@ -98,7 +98,7 @@ public class PetManager : MonoBehaviour
             UpdateUI();
 
             // Increase the upgrade cost
-            upgradeCost = Mathf.CeilToInt(upgradeCost + costMultiplier);
+            upgradeCost = Mathf.CeilToInt(upgradeCost * costMultiplier);
 
             UpdateUI();
             Debug.Log("Upgrade purchased! New feed amount: " + feedAmount);
@@ -118,7 +118,7 @@ public class PetManager : MonoBehaviour
             idleStrength = Mathf.CeilToInt(idleStrength + perSec);
 
             // Increase cost for next upgrade
-            upgradeCost2 = Mathf.CeilToInt(upgradeCost2 + costMultiplier2);
+            upgradeCost2 = Mathf.CeilToInt(upgradeCost2 * costMultiplier2);
 
             UpdateUI();
             Debug.Log("Bought Idle Upgrade! Now generating " + idleStrength + " Strength/sec");
