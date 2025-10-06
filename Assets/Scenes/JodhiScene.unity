@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8740cf6bedcde5d44ae47c41b39eb9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOccupied: 0
 --- !u!212 &65351344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8740cf6bedcde5d44ae47c41b39eb9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOccupied: 0
 --- !u!212 &103918048
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1287,7 +1289,7 @@ GameObject:
   - component: {fileID: 144698577}
   - component: {fileID: 144698576}
   m_Layer: 5
-  m_Name: TMP_Text
+  m_Name: UnlockText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1309,7 +1311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -200, y: -20}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144698576
@@ -1332,7 +1334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Unlock Ritual: 0000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1359,8 +1361,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1559,7 +1561,7 @@ GameObject:
   - component: {fileID: 172066361}
   - component: {fileID: 172066360}
   m_Layer: 5
-  m_Name: TMP_Text
+  m_Name: UnlockText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1581,7 +1583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -200, y: -20}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172066360
@@ -1604,7 +1606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Unlock Ritual: 0000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1631,8 +1633,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1968,6 +1970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b945e0e43d95a4d98dab63107c939e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 0}
+  iconImage: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!1 &218851820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,7 +2881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315378703
@@ -2926,8 +2931,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3416,7 +3421,7 @@ GameObject:
   - component: {fileID: 365814501}
   - component: {fileID: 365814500}
   m_Layer: 5
-  m_Name: TMP_Text
+  m_Name: UnlockText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3438,7 +3443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -200, y: -20}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365814500
@@ -3461,7 +3466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Unlock Ritual: 0000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3488,8 +3493,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5020,6 +5025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8740cf6bedcde5d44ae47c41b39eb9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOccupied: 0
 --- !u!212 &496395877
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5251,6 +5257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9019fd93497a644b6fe4b92a1de650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  playerInventory: {fileID: 0}
+  inventoryUI: {fileID: 0}
 --- !u!4 &505722782
 Transform:
   m_ObjectHideFlags: 0
@@ -6078,7 +6087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552219161
@@ -6128,8 +6137,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7002,6 +7011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8740cf6bedcde5d44ae47c41b39eb9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOccupied: 0
 --- !u!212 &649444738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8913,7 +8923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &957856792
@@ -8963,8 +8973,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9266,7 +9276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &973583037
@@ -9316,8 +9326,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10210,6 +10220,7 @@ MonoBehaviour:
   rollCost: 100
   pethunger: {fileID: 1767803609}
   playerInventory: {fileID: 1456654363}
+  inventoryUI: {fileID: 0}
 --- !u!4 &1030162140
 Transform:
   m_ObjectHideFlags: 0
@@ -11410,7 +11421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141829730
@@ -11460,8 +11471,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13172,7 +13183,7 @@ GameObject:
   - component: {fileID: 1329923047}
   - component: {fileID: 1329923046}
   m_Layer: 5
-  m_Name: TMP_Text
+  m_Name: UnlockText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13194,7 +13205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -200, y: -20}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329923046
@@ -13217,7 +13228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Unlock Ritual: 0000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13244,8 +13255,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15088,6 +15099,7 @@ MonoBehaviour:
   popupParent: {fileID: 1400467684}
   strengthText: {fileID: 1840960277}
   offset: {x: -180, y: -40}
+  popupArea: {fileID: 0}
 --- !u!1 &1628646222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15325,6 +15337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21eabd0a2e4c454c8ac38032af9577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedItem: {fileID: 0}
+  playerInventory: {fileID: 0}
+  decorationPlacer: {fileID: 0}
 --- !u!4 &1637875293
 Transform:
   m_ObjectHideFlags: 0
@@ -16018,7 +16033,7 @@ GameObject:
   - component: {fileID: 1729123679}
   - component: {fileID: 1729123678}
   m_Layer: 5
-  m_Name: TMP_Text
+  m_Name: UnlockText5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16040,7 +16055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -200, y: -20}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729123678
@@ -16063,7 +16078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Unlock Ritual: 0000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16090,8 +16105,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -16918,7 +16933,6 @@ MonoBehaviour:
   costMultiplier: 1.2
   feedMultiplier: 1.1
   idleUpgradeCost: 20
-  costMultiplier2: 1.1
   perSec: 3
   currentIdle: {fileID: 0}
   idleUpgradeCosts: 14000000c8000000d0070000204e0000400d030080841e00
@@ -16933,11 +16947,11 @@ MonoBehaviour:
   idleUpgradeCostText5: {fileID: 315378703}
   idleUnlockCosts: 00000000e803000010270000a086010040420f0080841e00
   idleUnlockCostText0: {fileID: 0}
-  idleUnlockCostText1: {fileID: 0}
-  idleUnlockCostText2: {fileID: 0}
-  idleUnlockCostText3: {fileID: 0}
-  idleUnlockCostText4: {fileID: 0}
-  idleUnlockCostText5: {fileID: 0}
+  idleUnlockCostText1: {fileID: 144698576}
+  idleUnlockCostText2: {fileID: 365814500}
+  idleUnlockCostText3: {fileID: 172066360}
+  idleUnlockCostText4: {fileID: 1329923046}
+  idleUnlockCostText5: {fileID: 1729123678}
   gacha: {fileID: 0}
   gachaResTxt: {fileID: 879932990}
   gachaRewardIcon: {fileID: 1412325658}
@@ -17818,7 +17832,6 @@ MonoBehaviour:
   costMultiplier: 10
   feedMultiplier: 1
   idleUpgradeCost: 20
-  costMultiplier2: 10
   perSec: 2
   currentIdle: {fileID: 0}
   idleUpgradeCosts: 14000000c8000000d0070000204e0000400d030080841e00
@@ -20243,7 +20256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0.0000038146973}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
   m_SizeDelta: {x: 184.742, y: -7.0377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074468179
@@ -20293,8 +20306,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

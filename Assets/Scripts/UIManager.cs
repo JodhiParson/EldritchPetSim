@@ -385,7 +385,7 @@ public TMP_Text idleUnlockCostText5;
                 upgradeButtons[i].interactable = unlocked[i] && petHunger >= costs[i];
             }
             if (upgradeTexts[i] != null)
-                upgradeTexts[i].text = unlocked[i] ? $"Upgrade Cost: {costs[i]}" : "";
+                upgradeTexts[i].text = unlocked[i] ? $"Upgrade: {costs[i]}" : "";
         }
 
         // ===== Carrot Unlock Buttons =====
@@ -416,7 +416,7 @@ public TMP_Text idleUnlockCostText5;
                 idleUpgradeButtons[i].interactable = idleUnlocked[i] && petHunger >= idleUpgradeCosts[i];
             }
             if (idleUpgradeTexts[i] != null)
-                idleUpgradeTexts[i].text = idleUnlocked[i] ? $"Idle Upgrade Cost: {idleUpgradeCosts[i]}" : "";
+                idleUpgradeTexts[i].text = idleUnlocked[i] ? $"Upgrade: {idleUpgradeCosts[i]}" : "";
         }
 
         // ===== Idle (Ritual) Unlock Buttons & Texts =====
@@ -433,7 +433,7 @@ public TMP_Text idleUnlockCostText5;
 
             if (idleUnlockTexts[i] != null)
             {
-                idleUnlockTexts[i].text = !idleUnlocked[i] ? $"Unlock Ritual: {idleUnlockCosts[i]}" : "";
+                idleUnlockTexts[i].text = !idleUnlocked[i] ? $"Unlock: {idleUnlockCosts[i]}" : "";
             }
         }
 
