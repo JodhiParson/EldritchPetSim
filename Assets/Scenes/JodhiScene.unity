@@ -255,6 +255,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13712736}
   m_CullTransparentMesh: 1
+--- !u!1 &34680360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34680361}
+  - component: {fileID: 34680362}
+  m_Layer: 5
+  m_Name: Popup Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &34680361
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34680360}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 959.99994, y: 182}
+  m_SizeDelta: {x: 465.19995, y: 272.766}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &34680362
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34680360}
+  m_CullTransparentMesh: 1
 --- !u!1 &51489561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,12 +2177,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1767803609}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+        m_MethodName: BuyIdleUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2531,12 +2575,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1767803609}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+        m_MethodName: BuyIdleUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6652,12 +6696,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1767803609}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+        m_MethodName: BuyIdleUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7762,7 +7806,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817674706}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
@@ -10153,7 +10197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 991520734}
   sfxSource: {fileID: 1191138867}
-  sfxSource1: {fileID: 0}
+  sfxSource1: {fileID: 68308142}
   musicVolume: 1
   sfxVolume: 1
   musicText: {fileID: 1035309752}
@@ -12220,6 +12264,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203518170}
   m_CullTransparentMesh: 1
+--- !u!1 &1204791313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204791314}
+  - component: {fileID: 1204791317}
+  - component: {fileID: 1204791316}
+  - component: {fileID: 1204791315}
+  m_Layer: 5
+  m_Name: IdleUnlockButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1204791314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204791313}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1410887682}
+  m_Father: {fileID: 1273715134}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 695.13525, y: -0.10229492}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1204791315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204791313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 2098444305317858540, guid: 7d9459be7e29a9949932883f3bb1c6f6, type: 3}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: -1879769634105004583, guid: 7d9459be7e29a9949932883f3bb1c6f6, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1204791316}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1767803609}
+        m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
+        m_MethodName: UnlockRitual
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1204791316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204791313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5187149795412559806, guid: 7d9459be7e29a9949932883f3bb1c6f6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1204791317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204791313}
+  m_CullTransparentMesh: 1
 --- !u!1 &1222333625
 GameObject:
   m_ObjectHideFlags: 0
@@ -12391,6 +12568,7 @@ RectTransform:
   - {fileID: 1356054811}
   - {fileID: 1990152186}
   - {fileID: 1553187320}
+  - {fileID: 1204791314}
   m_Father: {fileID: 100571852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13962,6 +14140,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408720210}
   m_CullTransparentMesh: 1
+--- !u!1 &1410887681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410887682}
+  - component: {fileID: 1410887684}
+  - component: {fileID: 1410887683}
+  m_Layer: 5
+  m_Name: TMP_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1410887682
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410887681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1204791314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -225, y: 0.0000038146973}
+  m_SizeDelta: {x: 184.742, y: -7.0377}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1410887683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410887681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 32
+  m_fontSizeBase: 32
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1410887684
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410887681}
+  m_CullTransparentMesh: 1
 --- !u!1 &1412325657
 GameObject:
   m_ObjectHideFlags: 0
@@ -14455,7 +14769,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1767803609}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+        m_MethodName: BuyIdleUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15096,10 +15410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1352156972}
-  popupParent: {fileID: 1400467684}
-  strengthText: {fileID: 1840960277}
   offset: {x: -180, y: -40}
-  popupArea: {fileID: 0}
+  popupArea: {fileID: 34680361}
 --- !u!1 &1628646222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,12 +15827,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1767803609}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+        m_MethodName: BuyIdleUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16375,12 +16687,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1767803609}
         m_TargetAssemblyTypeName: PetManager, Assembly-CSharp
-        m_MethodName: BuyUpgrade
+        m_MethodName: BuyIdleUpgrade
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16881,11 +17193,19 @@ MonoBehaviour:
   feedAmountText3: {fileID: 51489563}
   feedAmountText4: {fileID: 827177959}
   feedAmountText5: {fileID: 487272097}
+  idleAmountText: {fileID: 1990152187}
+  idleAmountText1: {fileID: 1131055063}
+  idleAmountText2: {fileID: 1587710062}
+  idleAmountText3: {fileID: 1800037808}
+  idleAmountText4: {fileID: 1925984209}
+  idleAmountText5: {fileID: 1413947788}
   idleStrength: 0
   feedAmounts: 0a000000b4000000e8030000881300001027000050c30000
   baseFeedAmounts: 0a000000b4000000e8030000a00f0000983a0000b0ad0100
   unlocked: 010000000000
   totalFeedAmount: 0
+  idleFeedAmounts: 000000000000000000000000000000000000000000000000
+  idleBaseFeedAmounts: 0a000000b4000000e8030000881300001027000050c30000
   upgradeCost: 10
   upgradeCost1: 1000
   upgradeCost2: 10000
@@ -16908,12 +17228,13 @@ MonoBehaviour:
   unlockButton3: {fileID: 1101142340}
   unlockButton4: {fileID: 1086271009}
   unlockButton5: {fileID: 2023772938}
+  idleUpgradeButton0: {fileID: 1553187321}
   idleUpgradeButton1: {fileID: 234412902}
   idleUpgradeButton2: {fileID: 622552764}
   idleUpgradeButton3: {fileID: 248398945}
   idleUpgradeButton4: {fileID: 1646117048}
   idleUpgradeButton5: {fileID: 1738401708}
-  idleUnlockButton0: {fileID: 0}
+  idleUnlockButton0: {fileID: 1204791315}
   idleUnlockButton1: {fileID: 2125622125}
   idleUnlockButton2: {fileID: 241810181}
   idleUnlockButton3: {fileID: 1919976813}
@@ -16935,17 +17256,16 @@ MonoBehaviour:
   idleUpgradeCost: 20
   perSec: 3
   currentIdle: {fileID: 0}
-  idleUpgradeCosts: 14000000c8000000d0070000204e0000400d030080841e00
+  idleUpgradeCosts: e80300001027000050c30000a086010040420f0080841e00
   idleUnlocked: 010000000000
-  idleIncrements: 0300000014000000c8000000d0070000204e0000400d0300
-  idleCostMultiplier: 1.2
+  idleCostMultiplier: 1.4
   idleUpgradeCostText0: {fileID: 2074468179}
   idleUpgradeCostText1: {fileID: 957856792}
   idleUpgradeCostText2: {fileID: 552219161}
   idleUpgradeCostText3: {fileID: 1141829730}
   idleUpgradeCostText4: {fileID: 973583037}
   idleUpgradeCostText5: {fileID: 315378703}
-  idleUnlockCosts: 00000000e803000010270000a086010040420f0080841e00
+  idleUnlockCosts: e80300001027000050c30000a086010040420f0080841e00
   idleUnlockCostText0: {fileID: 0}
   idleUnlockCostText1: {fileID: 144698576}
   idleUnlockCostText2: {fileID: 365814500}
@@ -17780,11 +18100,19 @@ MonoBehaviour:
   feedAmountText3: {fileID: 0}
   feedAmountText4: {fileID: 0}
   feedAmountText5: {fileID: 0}
+  idleAmountText: {fileID: 0}
+  idleAmountText1: {fileID: 0}
+  idleAmountText2: {fileID: 0}
+  idleAmountText3: {fileID: 0}
+  idleAmountText4: {fileID: 0}
+  idleAmountText5: {fileID: 0}
   idleStrength: 0
   feedAmounts: 000000000000000000000000000000000000000000000000
   baseFeedAmounts: 0a0000001900000064000000e80300001027000050c30000
   unlocked: 010000000000
   totalFeedAmount: 0
+  idleFeedAmounts: 000000000000000000000000000000000000000000000000
+  idleBaseFeedAmounts: 0a000000b4000000e8030000881300001027000050c30000
   upgradeCost: 10
   upgradeCost1: 1000
   upgradeCost2: 20
@@ -17807,6 +18135,7 @@ MonoBehaviour:
   unlockButton3: {fileID: 0}
   unlockButton4: {fileID: 0}
   unlockButton5: {fileID: 0}
+  idleUpgradeButton0: {fileID: 0}
   idleUpgradeButton1: {fileID: 0}
   idleUpgradeButton2: {fileID: 0}
   idleUpgradeButton3: {fileID: 0}
@@ -17836,7 +18165,6 @@ MonoBehaviour:
   currentIdle: {fileID: 0}
   idleUpgradeCosts: 14000000c8000000d0070000204e0000400d030080841e00
   idleUnlocked: 010000000000
-  idleIncrements: 0300000014000000c8000000d0070000204e0000400d0300
   idleCostMultiplier: 1.2
   idleUpgradeCostText0: {fileID: 0}
   idleUpgradeCostText1: {fileID: 0}
@@ -20746,6 +21074,7 @@ SceneRoots:
   - {fileID: 496395878}
   - {fileID: 649444739}
   - {fileID: 1400467684}
+  - {fileID: 34680361}
   - {fileID: 1851414871}
   - {fileID: 1767803608}
   - {fileID: 1752415772}
