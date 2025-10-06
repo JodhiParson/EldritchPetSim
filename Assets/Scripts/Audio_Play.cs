@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Audio_Play : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class Audio_Play : MonoBehaviour
     public AudioSource musicSource;  // Background music
     public AudioSource sfxSource;    // Sound effects CHOMP
     public AudioSource sfxSource1;    // Sound effects CLICK
-    
+    public Slider musicSlider;
+    public Slider sfxSlider;
 
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float musicVolume = 1f;
@@ -39,8 +41,8 @@ public class Audio_Play : MonoBehaviour
 
     private void Update()
     {
-        // Optional: update UI every frame if you want dynamic slider feedback
-        // UpdateUI();
+        musicSlider.value = musicVolume;
+        sfxSlider.value = sfxVolume;
     }
 
     // Play sound effect

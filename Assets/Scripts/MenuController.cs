@@ -32,6 +32,9 @@ public class MenuController : MonoBehaviour
     private RectTransform ritualRect;
     private Vector2 ritualClosedPos;
     private Vector2 ritualOpenPos;
+    private Vector2 menuOpenPos;
+    private Vector2 menuClosedPos;
+    private RectTransform menuRect;
 
     void Start()
     {
@@ -65,9 +68,22 @@ public class MenuController : MonoBehaviour
             }
 
             optionsClosedPos = optionsRect.anchoredPosition;
-            optionsOpenPos = optionsClosedPos + new Vector2(-optionsRect.rect.width * 2, 0);
+            optionsOpenPos = optionsClosedPos + new Vector2(-optionsRect.rect.width, 0);
             // optionsOpenPos = optionsClosedPos + new Vector2(0, 0);
             optionsMenu.SetActive(false); // start closed
+        }
+        if (menu != null)
+        {
+            menuRect = menu.GetComponent<RectTransform>();
+            if (menuRect == null)
+            {
+                Debug.LogError("menu is missing RectTransform!");
+                return;
+            }
+
+            menuClosedPos = menuRect.anchoredPosition;
+            menuOpenPos = menuClosedPos + new Vector2(-menuRect.rect.width, 0);
+            menu.SetActive(false); // start closed
         }
         if (ritualMenu != null)
         {
@@ -113,7 +129,7 @@ public class MenuController : MonoBehaviour
 
             // Ignore if clicked inside menu or on the toggle button
             if (!IsPointerOverUIObject(menu.GetComponent<RectTransform>()) &&
-                (clickedObject == null || clickedObject.tag != "OptionsButton"))
+                (clickedObject == null || clickedObject.tag != "MenuButton"))
             {
                 CloseMenu();
             }
@@ -150,7 +166,7 @@ public class MenuController : MonoBehaviour
                 upgradeMenu.SetActive(false);
             }
         }
-        // Smoothly slide upgrade menu
+        // Smoothly slide ritual menu
         if (ritualRect != null)
         {
             Vector2 target = ritualOpen ? ritualOpenPos : ritualClosedPos;
@@ -178,6 +194,14 @@ public class MenuController : MonoBehaviour
             if (!optionsOpen && Vector2.Distance(optionsRect.anchoredPosition, optionsClosedPos) < 0.1f)
                 optionsMenu.SetActive(false);
         }
+        if (menuRect != null)
+        {
+            Vector2 target = menuOpen ? menuOpenPos : menuClosedPos;
+            menuRect.anchoredPosition = Vector2.MoveTowards(menuRect.anchoredPosition, target, slideSpeed * Time.deltaTime);
+
+            if (!menuOpen && Vector2.Distance(menuRect.anchoredPosition, menuClosedPos) < 0.1f)
+                menu.SetActive(false);
+        }
     }
 
     // ================= Helper =================
@@ -196,13 +220,12 @@ public class MenuController : MonoBehaviour
     public void CloseMenu()
     {
         menuOpen = false;
-        menu.SetActive(false);
     }
 
     public void ToggleMenu()
     {
+        menu.SetActive(true);
         menuOpen = !menuOpen;
-        menu.SetActive(menuOpen);
     }
 
     // ================= Upgrade Menu =================
