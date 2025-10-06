@@ -6,7 +6,9 @@ public class Audio_Play : MonoBehaviour
 {
     [Header("Audio Sources")]
     public AudioSource musicSource;  // Background music
-    public AudioSource sfxSource;    // Sound effects
+    public AudioSource sfxSource;    // Sound effects CHOMP
+    public AudioSource sfxSource1;    // Sound effects CLICK
+    
 
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float musicVolume = 1f;
@@ -47,7 +49,11 @@ public class Audio_Play : MonoBehaviour
         if (sfxSource != null)
             sfxSource.Play();
     }
-
+    public void PlaySound1()
+    {
+        if (sfxSource1 != null)
+            sfxSource1.Play();
+    }
     // 🎚️ Decrease Music Volume
     public void DecreaseMusicVolume(float amount = 0.1f)
     {
@@ -71,7 +77,8 @@ public class Audio_Play : MonoBehaviour
     {
         sfxVolume = Mathf.Clamp01(sfxVolume - amount);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
-        Debug.Log($"SFX volume decreased: {sfxVolume}");
+        
+        // Debug.Log($"SFX volume decreased: {sfxVolume}");
         UpdateUI();
     }
 
@@ -80,7 +87,7 @@ public class Audio_Play : MonoBehaviour
     {
         sfxVolume = Mathf.Clamp01(sfxVolume + amount);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
-        Debug.Log($"SFX volume increased: {sfxVolume}");
+        // Debug.Log($"SFX volume increased: {sfxVolume}");
         UpdateUI();
     }
 }

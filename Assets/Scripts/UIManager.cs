@@ -55,6 +55,18 @@ public class PetManager : MonoBehaviour
     public Button unlockButton3;
     public Button unlockButton4;
     public Button unlockButton5;
+    // public Button idleUpgradeButton0;
+    public Button idleUpgradeButton1;
+    public Button idleUpgradeButton2;
+    public Button idleUpgradeButton3;
+    public Button idleUpgradeButton4;
+    public Button idleUpgradeButton5;
+     public Button idleUnlockButton0;
+    public Button idleUnlockButton1;
+    public Button idleUnlockButton2;
+    public Button idleUnlockButton3;
+    public Button idleUnlockButton4;
+    public Button idleUnlockButton5;
 
     [Header("Upgrade Cost Texts")]
     public TMP_Text upgradeCostText;
@@ -85,15 +97,10 @@ public class PetManager : MonoBehaviour
     public int[] idleUpgradeCosts = new int[6] { 20, 200, 2000, 20000, 200000, 2000000 };
     public bool[] idleUnlocked = new bool[6] { true, false, false, false, false, false };
     public int[] idleIncrements = new int[6] { 3, 20, 200, 2000, 20000, 200000 }; // perSec increment per upgrade
-    public float idleCostMultiplier = 1.2f;
+    public float idleCostMultiplier = 1.4f;
 
-    [Header("Idle Upgrade Buttons")]
-    public Button idleUpgradeButton0;
-    public Button idleUpgradeButton1;
-    public Button idleUpgradeButton2;
-    public Button idleUpgradeButton3;
-    public Button idleUpgradeButton4;
-    public Button idleUpgradeButton5;
+    // [Header("Idle Upgrade Buttons")]
+    
 
     [Header("Idle Upgrade Texts")]
     public TMP_Text idleUpgradeCostText0;
@@ -102,6 +109,17 @@ public class PetManager : MonoBehaviour
     public TMP_Text idleUpgradeCostText3;
     public TMP_Text idleUpgradeCostText4;
     public TMP_Text idleUpgradeCostText5;
+
+    [Header("Idle Unlock Costs")]
+    public int[] idleUnlockCosts = new int[6] { 0, 1000, 10000, 100000, 1000000, 2000000 };
+
+    [Header("Idle Unlock Cost Texts")]
+    public TMP_Text idleUnlockCostText0;
+    public TMP_Text idleUnlockCostText1;
+    public TMP_Text idleUnlockCostText2;
+    public TMP_Text idleUnlockCostText3;
+    public TMP_Text idleUnlockCostText4;
+public TMP_Text idleUnlockCostText5;
 
     [Header("Gacha System")]
     public GachaSys gacha;
@@ -118,6 +136,52 @@ public class PetManager : MonoBehaviour
     public Animator bunnyAnimator;
     public AudioSource bunnyAudio;
 
+    // ================= Unlock Rituals =================
+    public void UnlockRitual(int index)
+{
+    if (idleUnlocked[index]) return; // already unlocked
+
+    // cost for this ritual unlock
+    int cost = idleUpgradeCosts[index];
+
+    if (petHunger >= cost)
+    {
+        petHunger -= cost;
+        idleUnlocked[index] = true;
+
+        // enable the corresponding idle upgrade button
+        Button[] idleUpgradeButtonsArray = { idleUpgradeButton1, idleUpgradeButton2, idleUpgradeButton3, idleUpgradeButton4, idleUpgradeButton5 };
+        if (idleUpgradeButtonsArray[index] != null)
+            idleUpgradeButtonsArray[index].gameObject.SetActive(true);
+
+        // hide or disable the unlock button after unlocking
+        Button[] idleUnlockButtonsArray = { idleUnlockButton0, idleUnlockButton1, idleUnlockButton2, idleUnlockButton3, idleUnlockButton4, idleUnlockButton5 };
+        if (idleUnlockButtonsArray[index] != null)
+        {
+            idleUnlockButtonsArray[index].interactable = false;
+
+            CanvasGroup cg = idleUnlockButtonsArray[index].GetComponent<CanvasGroup>();
+            if (cg == null)
+                cg = idleUnlockButtonsArray[index].gameObject.AddComponent<CanvasGroup>();
+
+            cg.alpha = 0;                // invisible
+            cg.blocksRaycasts = false;   // no longer blocks clicks
+        }
+
+        // optional feedback
+        Debug.Log($"Unlocked Ritual {index}: Cost {cost}");
+
+        UpdateUI();
+    }
+    else
+    {
+        Debug.Log($"Not enough petHunger to unlock ritual {index}. Need {cost}, have {petHunger}.");
+    }
+}
+
+
+
+   
     void Start()
     {
         feedAmounts[0] = baseFeedAmounts[0]; // Carrot 1 starts unlocked
@@ -132,6 +196,25 @@ public class PetManager : MonoBehaviour
         }
 
         UpdateUI();
+    }
+
+    float idleTimer = 0f;
+
+    void Update()
+    {
+        idleTimer += Time.deltaTime;
+
+        if (idleTimer >= 1f)
+        {
+            int ticks = Mathf.FloorToInt(idleTimer);
+            petHunger += idleStrength * ticks;
+            idleTimer -= ticks;
+
+            if (StrengthPopUpGenerator.current != null && (idleStrength * ticks) > 0)
+                StrengthPopUpGenerator.current.CreatePopup("+" + (idleStrength * ticks));
+
+            UpdateUI();
+        }
     }
 
     // ================= Feed Pet =================
@@ -190,50 +273,50 @@ public class PetManager : MonoBehaviour
 
     // ================= Unlock Carrots =================
     public void UnlockCarrot(int index)
-{
-    if (unlocked[index]) return;
-
-    int cost = 0;
-    switch (index)
     {
-        case 1: cost = unlockCost1; break;
-        case 2: cost = unlockCost2; break;
-        case 3: cost = unlockCost3; break;
-        case 4: cost = unlockCost4; break;
-        case 5: cost = unlockCost5; break;
-    }
+        if (unlocked[index]) return;
 
-    if (petHunger >= cost)
-    {
-        petHunger -= cost;
-        unlocked[index] = true;
-        feedAmounts[index] = baseFeedAmounts[index];
-        RecalculateTotalFeedPower();
-
-        // Instead of hiding, disable interactability and make it invisible
-        Button[] unlockButtons = { null, unlockButton1, unlockButton2, unlockButton3, unlockButton4, unlockButton5 };
-        if (unlockButtons[index] != null)
+        int cost = 0;
+        switch (index)
         {
-            unlockButtons[index].interactable = false;
-
-            // Optional: make button invisible but still in hierarchy
-            CanvasGroup cg = unlockButtons[index].GetComponent<CanvasGroup>();
-            if (cg == null)
-                cg = unlockButtons[index].gameObject.AddComponent<CanvasGroup>();
-
-            cg.alpha = 0;        // Make invisible
-            cg.blocksRaycasts = false; // Don’t block clicks
+            case 1: cost = unlockCost1; break;
+            case 2: cost = unlockCost2; break;
+            case 3: cost = unlockCost3; break;
+            case 4: cost = unlockCost4; break;
+            case 5: cost = unlockCost5; break;
         }
-        
 
-        // Show the upgrade button
-            Button[] upgradeButtons = { upgradeButton, upgradeButton1, upgradeButton2, upgradeButton3, upgradeButton4, upgradeButton5 };
-        if (upgradeButtons[index] != null)
-            upgradeButtons[index].gameObject.SetActive(true);
-        // UpdateFeedButtonSprite(index);
-        UpdateUI();
+        if (petHunger >= cost)
+        {
+            petHunger -= cost;
+            unlocked[index] = true;
+            feedAmounts[index] = baseFeedAmounts[index];
+            RecalculateTotalFeedPower();
+
+            // Instead of hiding, disable interactability and make it invisible
+            Button[] unlockButtons = { null, unlockButton1, unlockButton2, unlockButton3, unlockButton4, unlockButton5 };
+            if (unlockButtons[index] != null)
+            {
+                unlockButtons[index].interactable = false;
+
+                // Optional: make button invisible but still in hierarchy
+                CanvasGroup cg = unlockButtons[index].GetComponent<CanvasGroup>();
+                if (cg == null)
+                    cg = unlockButtons[index].gameObject.AddComponent<CanvasGroup>();
+
+                cg.alpha = 0;        // Make invisible
+                cg.blocksRaycasts = false; // Don’t block clicks
+            }
+            
+
+            // Show the upgrade button
+                Button[] upgradeButtons = { upgradeButton, upgradeButton1, upgradeButton2, upgradeButton3, upgradeButton4, upgradeButton5 };
+            if (upgradeButtons[index] != null)
+                upgradeButtons[index].gameObject.SetActive(true);
+            // UpdateFeedButtonSprite(index);
+            UpdateUI();
+        }
     }
-}
 
     void RecalculateTotalFeedPower()
     {
@@ -268,24 +351,10 @@ public class PetManager : MonoBehaviour
     }
 }
 
-    float idleTimer = 0f;
-    void Update()
-    {
-        idleTimer += Time.deltaTime;
 
-        if (idleTimer >= 1f)
-        {
-            int ticks = Mathf.FloorToInt(idleTimer);
-            petHunger += idleStrength * ticks;
-            idleTimer -= ticks;
 
-            if (StrengthPopUpGenerator.current != null && (idleStrength * ticks) > 0)
-                StrengthPopUpGenerator.current.CreatePopup("+" + (idleStrength * ticks));
 
-            UpdateUI();
-        }
-    }
-
+    // ================= UI =================
     // ================= UI =================
     void UpdateUI()
     {
@@ -303,14 +372,13 @@ public class PetManager : MonoBehaviour
         if (currentIdle != null)
             currentIdle.text = "Current Idle: " + idleStrength;
 
-        // ===== Upgrade Buttons =====
+        // ===== Carrot Upgrade Buttons =====
         Button[] upgradeButtons = { upgradeButton, upgradeButton1, upgradeButton2, upgradeButton3, upgradeButton4, upgradeButton5 };
         TMP_Text[] upgradeTexts = { upgradeCostText, upgradeCostText1, upgradeCostText2, upgradeCostText3, upgradeCostText4, upgradeCostText5 };
         int[] costs = { upgradeCost, upgradeCost1, upgradeCost2, upgradeCost3, upgradeCost4, upgradeCost5 };
 
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
-
             if (upgradeButtons[i] != null)
             {
                 upgradeButtons[i].gameObject.SetActive(unlocked[i]);
@@ -320,25 +388,24 @@ public class PetManager : MonoBehaviour
                 upgradeTexts[i].text = unlocked[i] ? $"Upgrade Cost: {costs[i]}" : "";
         }
 
-        // ===== Unlock Buttons =====
+        // ===== Carrot Unlock Buttons =====
         Button[] unlockButtons = { null, unlockButton1, unlockButton2, unlockButton3, unlockButton4, unlockButton5 };
         TMP_Text[] unlockTexts = { null, unlockCostText1, unlockCostText2, unlockCostText3, unlockCostText4, unlockCostText5 };
         int[] unlockCosts = { 0, unlockCost1, unlockCost2, unlockCost3, unlockCost4, unlockCost5 };
 
         for (int i = 1; i < unlockButtons.Length; i++)
         {
-
             if (unlockButtons[i] != null)
             {
-                unlockButtons[i].gameObject.SetActive(true);
-                unlockButtons[i].interactable = !unlocked[i];
+                unlockButtons[i].gameObject.SetActive(true); // always visible
+                unlockButtons[i].interactable = !unlocked[i] && petHunger >= unlockCosts[i];
             }
             if (unlockTexts[i] != null)
                 unlockTexts[i].text = !unlocked[i] ? $"Unlock: {unlockCosts[i]}" : "";
         }
 
-        // ===== Idle Upgrade Buttons =====
-        Button[] idleUpgradeButtons = { idleUpgradeButton0, idleUpgradeButton1, idleUpgradeButton2, idleUpgradeButton3, idleUpgradeButton4, idleUpgradeButton5 };
+        // ===== Idle (Ritual) Upgrade Buttons =====
+        Button[] idleUpgradeButtons = { idleUpgradeButton1, idleUpgradeButton2, idleUpgradeButton3, idleUpgradeButton4, idleUpgradeButton5 };
         TMP_Text[] idleUpgradeTexts = { idleUpgradeCostText0, idleUpgradeCostText1, idleUpgradeCostText2, idleUpgradeCostText3, idleUpgradeCostText4, idleUpgradeCostText5 };
 
         for (int i = 0; i < idleUpgradeButtons.Length; i++)
@@ -349,15 +416,32 @@ public class PetManager : MonoBehaviour
                 idleUpgradeButtons[i].interactable = idleUnlocked[i] && petHunger >= idleUpgradeCosts[i];
             }
             if (idleUpgradeTexts[i] != null)
-            {
                 idleUpgradeTexts[i].text = idleUnlocked[i] ? $"Idle Upgrade Cost: {idleUpgradeCosts[i]}" : "";
+        }
+
+        // ===== Idle (Ritual) Unlock Buttons & Texts =====
+        Button[] idleUnlockButtons = { idleUnlockButton1, idleUnlockButton2, idleUnlockButton3, idleUnlockButton4, idleUnlockButton5 };
+        TMP_Text[] idleUnlockTexts = { idleUnlockCostText0, idleUnlockCostText1, idleUnlockCostText2, idleUnlockCostText3, idleUnlockCostText4, idleUnlockCostText5 };
+
+        for (int i = 0; i < idleUnlockButtons.Length; i++)
+        {
+            if (idleUnlockButtons[i] != null)
+            {
+                idleUnlockButtons[i].gameObject.SetActive(!idleUnlocked[i]); // Show only if locked
+                idleUnlockButtons[i].interactable = !idleUnlocked[i] && petHunger >= idleUnlockCosts[i];
+            }
+
+            if (idleUnlockTexts[i] != null)
+            {
+                idleUnlockTexts[i].text = !idleUnlocked[i] ? $"Unlock Ritual: {idleUnlockCosts[i]}" : "";
             }
         }
+
         // ===== Gacha =====
         if (gachaButton != null && gacha != null)
             gachaButton.interactable = petHunger >= gacha.rollCost;
 
-        // Update feed button sprite to highest unlocked carrot
+        // ===== Feed Button Sprite =====
         if (feedButton != null)
         {
             int highestCarrot = GetHighestUnlockedCarrot();
@@ -365,23 +449,24 @@ public class PetManager : MonoBehaviour
             {
                 Image btnImage = feedButton.GetComponent<Image>();
                 if (btnImage != null)
-                {
                     btnImage.sprite = carrotSprites[highestCarrot];
-                }
             }
         }
-    }
-    // ===== Update Button Sprites =====
-        int GetHighestUnlockedCarrot()
-{
-    int highest = 0; // Start with carrot 0
-    for (int i = 0; i < unlocked.Length; i++)
-    {
-        if (unlocked[i])
-            highest = i;
-    }
-    return highest;
+        
 }
+
+    
+// ===== Update Button Sprites =====
+    int GetHighestUnlockedCarrot()
+    {
+        int highest = 0; // Start with carrot 0
+        for (int i = 0; i < unlocked.Length; i++)
+        {
+            if (unlocked[i])
+                highest = i;
+        }
+        return highest;
+    }
 
 
 
