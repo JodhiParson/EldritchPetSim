@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a13ea94196e654fb9a290311ccb1ef, type: 3}
   m_Name: Flower 1
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
+  itemName: Red Flower
+  icon: {fileID: -8497247431355526003, guid: b188659908a857049a68a03dbd3c3d75, type: 3}
   isStackable: 1
+  prefab: {fileID: 7289122178919800972, guid: cc946f1641442fe43ad69fde9fa0f00f, type: 3}
+  placementOffset: {x: 0, y: 1, z: 0}

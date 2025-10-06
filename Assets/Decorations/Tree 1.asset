@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a13ea94196e654fb9a290311ccb1ef, type: 3}
   m_Name: Tree 1
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
+  itemName: Tree
+  icon: {fileID: -2901806346537976871, guid: 2557e9b5c53222445863782d9f1556d7, type: 3}
   isStackable: 1
+  prefab: {fileID: 9071503780783740617, guid: 253082137345a4641bdf32136b8a6a43, type: 3}
+  placementOffset: {x: 0, y: 2.5, z: 0}

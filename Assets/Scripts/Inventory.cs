@@ -35,15 +35,21 @@ public class Inventory : MonoBehaviour
         slots.Add(new InventorySlot(newItem, amount));
     }
 
-    public string GetInventoryString()
+    public void RemoveItem(ItemData item)
     {
-        string result = "Inventory:\n";
-        foreach (var slot in slots)
+        InventorySlot slot = slots.Find(s => s.item == item);
+        if (slot != null)
         {
-            result += "- " + slot.item.itemName;
-            if (slot.item.isStackable) result += " x" + slot.count;
-            result += "\n";
+            if (item.isStackable)
+            {
+                slot.count--;
+                if (slot.count <= 0)
+                    slots.Remove(slot);
+            }
+            else
+            {
+                slots.Remove(slot);
+            }
         }
-        return result;
     }
 }

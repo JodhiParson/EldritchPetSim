@@ -15,3 +15,5 @@ MonoBehaviour:
   itemName: Rock Wall
   icon: {fileID: -7969374483246059072, guid: 4462eedf938689a4ebefbf30a0397883, type: 3}
   isStackable: 1
+  prefab: {fileID: 1635214709332152545, guid: 268d3650c72377049842b69c2f75ca47, type: 3}
+  placementOffset: {x: 0, y: 1, z: 0}

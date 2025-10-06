@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a13ea94196e654fb9a290311ccb1ef, type: 3}
   m_Name: Log
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
+  itemName: Log
+  icon: {fileID: 2036286996971067089, guid: 3c6e757f1f868d34fb0a96fae73cd34b, type: 3}
   isStackable: 1
+  prefab: {fileID: 2748100219255472828, guid: 591195f0a060ac341a2159fdb44e6d52, type: 3}
+  placementOffset: {x: 0, y: 1, z: 0}

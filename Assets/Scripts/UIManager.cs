@@ -180,16 +180,16 @@ public class PetManager : MonoBehaviour
     // ================= Gatcha System =================
     public void OnRollButton()
     {
-        GachaReward reward = gacha.Roll();
+        GachaReward reward = gacha.Roll(); // Roll already adds item
         if (reward != null)
         {
-            playerInventory.AddItem(reward.rewardItem); // Only add here
             gachaResTxt.text = "You got: " + reward.rewardItem.itemName;
 
             if (gachaRewardIcon != null && reward.rewardItem.icon != null)
                 gachaRewardIcon.sprite = reward.rewardItem.icon;
 
-            inventoryUI.UpdateInventoryUI();
+            // Inventory UI is already updated in Gacha.Roll(), so optional
+            // inventoryUI.UpdateInventoryUI();
         }
     }
     public void ExitGame()
