@@ -6,6 +6,7 @@ TagManager:
   tags:
   - OptionsButton
   - Wall
+  - Inventory
   layers:
   - Default
   - TransparentFX

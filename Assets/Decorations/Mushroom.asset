@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a13ea94196e654fb9a290311ccb1ef, type: 3}
-  m_Name: Rock 1
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
-  itemName: Rock
-  icon: {fileID: -6960903314270103029, guid: 140e800b94d75294fa2048e448031826, type: 3}
+  itemName: Mushroom
+  icon: {fileID: 6298751140401020869, guid: b7736971c2e5cc94e94680b2a3eeada5, type: 3}
   isStackable: 1
-  prefab: {fileID: 2613867668311664154, guid: d49a7361422ce414bb5bd83310ac125f, type: 3}
-  placementOffset: {x: 0, y: 1, z: 0}
+  prefab: {fileID: 8213398815686991529, guid: 3e75fd3ecd551924ea224b0fadb3e00c, type: 3}
+  placementOffset: {x: 0, y: 0.5, z: 0}

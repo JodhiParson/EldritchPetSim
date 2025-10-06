@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a13ea94196e654fb9a290311ccb1ef, type: 3}
-  m_Name: Rock 1
+  m_Name: Log
   m_EditorClassIdentifier: 
-  itemName: Rock
-  icon: {fileID: -6960903314270103029, guid: 140e800b94d75294fa2048e448031826, type: 3}
+  itemName: Log
+  icon: {fileID: 2036286996971067089, guid: 3c6e757f1f868d34fb0a96fae73cd34b, type: 3}
   isStackable: 1
-  prefab: {fileID: 2613867668311664154, guid: d49a7361422ce414bb5bd83310ac125f, type: 3}
+  prefab: {fileID: 2748100219255472828, guid: 591195f0a060ac341a2159fdb44e6d52, type: 3}
   placementOffset: {x: 0, y: 1, z: 0}

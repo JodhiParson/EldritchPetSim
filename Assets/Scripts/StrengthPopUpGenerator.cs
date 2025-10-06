@@ -10,6 +10,7 @@ public class StrengthPopUpGenerator : MonoBehaviour
     public RectTransform popupParent; // assign your Canvas or UI container
     public RectTransform strengthText; // assign the Strength TMP_Text object
     public Vector2 offset = new Vector2(-180, -70f); // how far below the text
+    public RectTransform popupArea;
 
     private void Awake()
     {
@@ -28,27 +29,26 @@ public class StrengthPopUpGenerator : MonoBehaviour
 
     public void CreatePopup(string text)
     {
-        if (prefab == null || popupParent == null || strengthText == null)
-        {
-            Debug.LogWarning("Missing references in StrengthPopUpGenerator!");
-            return;
-        }
+        if (prefab == null || popupArea == null) return;
 
-        // Create the popup under the UI canvas
-        GameObject popup = Instantiate(prefab, popupParent);
+        // Create popup inside panel
+        GameObject popup = Instantiate(prefab, popupArea);
 
         // Set text
         var tmp = popup.GetComponentInChildren<TextMeshProUGUI>();
         tmp.text = text;
 
-        // Position just below the strength text
+        // Random position within panel bounds
         RectTransform popupRect = popup.GetComponent<RectTransform>();
-        popupRect.position = strengthText.position + (Vector3)offset;
+        Rect panelRect = popupArea.rect;
 
-        // Optional: random small x offset so numbers don’t overlap
-        popupRect.position += new Vector3(Random.Range(-100f, 100f), 0, 0);
+        float randX = Random.Range(panelRect.xMin, panelRect.xMax);
+        float randY = Random.Range(panelRect.yMin, panelRect.yMax);
+
+        popupRect.anchoredPosition = new Vector2(randX, randY);
 
         // Destroy after animation
         Destroy(popup, 1f);
     }
+
 }

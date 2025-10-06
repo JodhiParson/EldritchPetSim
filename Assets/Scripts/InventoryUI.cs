@@ -1,45 +1,38 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    [Header("References")]
-    public Inventory playerInventory;       // Inventory script
-    public Transform slotsParent;           // Panel with GridLayoutGroup
-    public GameObject slotPrefab;           // Prefab with Image + TMP_Text
-
-    [Header("Optional")]
-    public Sprite emptySlotIcon;            // Placeholder icon if item icon is missing
+    public Inventory playerInventory;
+    public Transform slotsParent;
+    public GameObject slotPrefab;
+    public Sprite emptySlotIcon;
 
     public void UpdateInventoryUI()
     {
-        if (playerInventory == null || slotsParent == null || slotPrefab == null)
-        {
-            Debug.LogWarning("InventoryUI references missing!");
-            return;
-        }
+        if (playerInventory == null || slotsParent == null || slotPrefab == null) return;
 
-        // Clear old slots
         foreach (Transform child in slotsParent)
             Destroy(child.gameObject);
 
-        // Spawn slot prefab for each inventory item
         foreach (var slot in playerInventory.slots)
         {
             GameObject slotGO = Instantiate(slotPrefab, slotsParent);
+            InventorySlotUI slotUI = slotGO.GetComponent<InventorySlotUI>();
+            Button button = slotGO.GetComponent<Button>();
 
-            // Find the icon and count in the prefab
-            Image iconImage = slotGO.transform.Find("Icon")?.GetComponent<Image>();
-            TMP_Text countText = slotGO.transform.Find("Count")?.GetComponent<TMP_Text>();
+            if (slotUI == null || button == null) continue;
 
-            // Set icon
-            if (iconImage != null)
-                iconImage.sprite = slot.item.icon != null ? slot.item.icon : emptySlotIcon;
+            // Use SetSlot to properly assign icon and count
+            slotUI.SetSlot(slot.item, slot.count, emptySlotIcon);
 
-            // Set count (only if stackable)
-            if (countText != null)
-                countText.text = slot.item.isStackable ? slot.count.ToString() : "";
+            InventorySlotUI capturedSlotUI = slotUI; // closure fix
+            button.onClick.AddListener(() =>
+            {
+                InventoryDecorationPlacer placer = Object.FindFirstObjectByType<InventoryDecorationPlacer>();
+                if (placer != null)
+                    placer.OnClickItem(capturedSlotUI.itemData);
+            });
         }
     }
 }
