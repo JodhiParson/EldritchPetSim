@@ -90,7 +90,7 @@ public class PetManager : MonoBehaviour
     public int idleUpgradeCost = 20;
     // public Button idleUpgradeButton;
     // public TMP_Text idleUpgradeCostText;
-    public float costMultiplier2 = 1.1f;
+    // public float costMultiplier2 = 1.1f;
     public int perSec = 3;
     public TMP_Text currentIdle;
     [Header("Idle Upgrade System (6 tiers)")]
@@ -111,7 +111,7 @@ public class PetManager : MonoBehaviour
     public TMP_Text idleUpgradeCostText5;
 
     [Header("Idle Unlock Costs")]
-    public int[] idleUnlockCosts = new int[6] { 0, 1000, 10000, 100000, 1000000, 2000000 };
+    public int[] idleUnlockCosts = new int[5] {  1000, 10000, 100000, 1000000, 2000000 };
 
     [Header("Idle Unlock Cost Texts")]
     public TMP_Text idleUnlockCostText0;
@@ -420,7 +420,7 @@ public TMP_Text idleUnlockCostText5;
         }
 
         // ===== Idle (Ritual) Unlock Buttons & Texts =====
-        Button[] idleUnlockButtons = { idleUnlockButton1, idleUnlockButton2, idleUnlockButton3, idleUnlockButton4, idleUnlockButton5 };
+        Button[] idleUnlockButtons = { idleUnlockButton0, idleUnlockButton1, idleUnlockButton2, idleUnlockButton3, idleUnlockButton4, idleUnlockButton5 };
         TMP_Text[] idleUnlockTexts = { idleUnlockCostText0, idleUnlockCostText1, idleUnlockCostText2, idleUnlockCostText3, idleUnlockCostText4, idleUnlockCostText5 };
 
         for (int i = 0; i < idleUnlockButtons.Length; i++)
