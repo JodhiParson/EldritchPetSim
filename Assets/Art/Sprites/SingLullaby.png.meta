@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SingLullaby_0: 8308344816481055740
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

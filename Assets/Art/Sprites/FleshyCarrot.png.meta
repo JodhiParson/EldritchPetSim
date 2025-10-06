@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FleshyCarrot_0: 1290445433253390455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

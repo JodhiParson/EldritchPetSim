@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EyesInTheFur_0: 3301300973802326377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

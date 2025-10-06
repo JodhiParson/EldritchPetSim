@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SugarGlazedCarrot_0: 4271060271039841849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

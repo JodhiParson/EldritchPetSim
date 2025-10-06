@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GoldenCarrot_0: 4161706355186973705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
