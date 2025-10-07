@@ -7598,10 +7598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4534403f6c001f94a9662b4bd6008295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carrotPrefab: {fileID: 3941523092292138960, guid: 6623db9bab303784c80819692e05f67c, type: 3}
-  rabbitSprite: {fileID: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
-  speed: 5
 --- !u!1 &827177957
 GameObject:
   m_ObjectHideFlags: 0
@@ -17022,11 +17018,19 @@ MonoBehaviour:
   feedAmountText3: {fileID: 51489563}
   feedAmountText4: {fileID: 827177959}
   feedAmountText5: {fileID: 487272097}
+  idleAmountText: {fileID: 0}
+  idleAmountText1: {fileID: 0}
+  idleAmountText2: {fileID: 0}
+  idleAmountText3: {fileID: 0}
+  idleAmountText4: {fileID: 0}
+  idleAmountText5: {fileID: 0}
   idleStrength: 0
   feedAmounts: 0a000000b4000000e8030000881300001027000050c30000
   baseFeedAmounts: 0a000000b4000000e8030000a00f0000983a0000b0ad0100
   unlocked: 010000000000
   totalFeedAmount: 0
+  idleFeedAmounts: 000000000000000000000000000000000000000000000000
+  idleBaseFeedAmounts: 0a000000b4000000e8030000881300001027000050c30000
   upgradeCost: 10
   upgradeCost1: 1000
   upgradeCost2: 10000
@@ -17049,6 +17053,7 @@ MonoBehaviour:
   unlockButton3: {fileID: 1101142340}
   unlockButton4: {fileID: 1086271009}
   unlockButton5: {fileID: 2023772938}
+  idleUpgradeButton0: {fileID: 0}
   idleUpgradeButton1: {fileID: 234412902}
   idleUpgradeButton2: {fileID: 622552764}
   idleUpgradeButton3: {fileID: 248398945}
@@ -17066,6 +17071,7 @@ MonoBehaviour:
   upgradeCostText3: {fileID: 1222333627}
   upgradeCostText4: {fileID: 454160740}
   upgradeCostText5: {fileID: 537910968}
+  unlockCostText0: {fileID: 0}
   unlockCostText1: {fileID: 263808673}
   unlockCostText2: {fileID: 1994266820}
   unlockCostText3: {fileID: 996169036}
@@ -17078,7 +17084,6 @@ MonoBehaviour:
   currentIdle: {fileID: 0}
   idleUpgradeCosts: 14000000c8000000d0070000204e0000400d030080841e00
   idleUnlocked: 010000000000
-  idleIncrements: 0300000014000000c8000000d0070000204e0000400d0300
   idleCostMultiplier: 1.2
   idleUpgradeCostText0: {fileID: 2074468179}
   idleUpgradeCostText1: {fileID: 957856792}
@@ -17921,11 +17926,19 @@ MonoBehaviour:
   feedAmountText3: {fileID: 0}
   feedAmountText4: {fileID: 0}
   feedAmountText5: {fileID: 0}
+  idleAmountText: {fileID: 0}
+  idleAmountText1: {fileID: 0}
+  idleAmountText2: {fileID: 0}
+  idleAmountText3: {fileID: 0}
+  idleAmountText4: {fileID: 0}
+  idleAmountText5: {fileID: 0}
   idleStrength: 0
   feedAmounts: 000000000000000000000000000000000000000000000000
   baseFeedAmounts: 0a0000001900000064000000e80300001027000050c30000
   unlocked: 010000000000
   totalFeedAmount: 0
+  idleFeedAmounts: 000000000000000000000000000000000000000000000000
+  idleBaseFeedAmounts: 0a000000b4000000e8030000881300001027000050c30000
   upgradeCost: 10
   upgradeCost1: 1000
   upgradeCost2: 20
@@ -17948,6 +17961,7 @@ MonoBehaviour:
   unlockButton3: {fileID: 0}
   unlockButton4: {fileID: 0}
   unlockButton5: {fileID: 0}
+  idleUpgradeButton0: {fileID: 0}
   idleUpgradeButton1: {fileID: 0}
   idleUpgradeButton2: {fileID: 0}
   idleUpgradeButton3: {fileID: 0}
@@ -17965,6 +17979,7 @@ MonoBehaviour:
   upgradeCostText3: {fileID: 0}
   upgradeCostText4: {fileID: 0}
   upgradeCostText5: {fileID: 0}
+  unlockCostText0: {fileID: 0}
   unlockCostText1: {fileID: 0}
   unlockCostText2: {fileID: 0}
   unlockCostText3: {fileID: 0}
@@ -17977,7 +17992,6 @@ MonoBehaviour:
   currentIdle: {fileID: 0}
   idleUpgradeCosts: 14000000c8000000d0070000204e0000400d030080841e00
   idleUnlocked: 010000000000
-  idleIncrements: 0300000014000000c8000000d0070000204e0000400d0300
   idleCostMultiplier: 1.2
   idleUpgradeCostText0: {fileID: 0}
   idleUpgradeCostText1: {fileID: 0}
