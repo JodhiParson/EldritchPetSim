@@ -1,28 +1,22 @@
 using UnityEngine;
 
-public class FullscreenToggle : MonoBehaviour
+public class ScreenManager : MonoBehaviour
 {
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            ToggleFullscreen();
-        }
-    }
-
     public void ToggleFullscreen()
     {
-        // Toggle fullscreen on/off
-        Screen.fullScreen = !Screen.fullScreen;
-
-        // Log the current state
         if (Screen.fullScreen)
         {
-            Debug.Log("Entered fullscreen mode.");
+            // Exit fullscreen → go windowed
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+            Screen.fullScreen = false;
+            Debug.Log("Exited fullscreen mode.");
         }
         else
         {
-            Debug.Log("Exited fullscreen mode.");
+            // Enter fullscreen → use borderless fullscreen window
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            Screen.fullScreen = true;
+            Debug.Log("Entered fullscreen mode.");
         }
     }
 }

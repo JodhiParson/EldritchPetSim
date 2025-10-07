@@ -77,6 +77,7 @@ public class Audio_Play : MonoBehaviour
     {
         sfxVolume = Mathf.Clamp01(sfxVolume - amount);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
+        if (sfxSource1 != null) sfxSource1.volume = sfxVolume;
         
         // Debug.Log($"SFX volume decreased: {sfxVolume}");
         UpdateUI();
@@ -87,6 +88,8 @@ public class Audio_Play : MonoBehaviour
     {
         sfxVolume = Mathf.Clamp01(sfxVolume + amount);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
+        if (sfxSource1 != null) sfxSource1.volume = sfxVolume;
+
         // Debug.Log($"SFX volume increased: {sfxVolume}");
         UpdateUI();
     }
