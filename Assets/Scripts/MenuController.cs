@@ -226,6 +226,7 @@ public class MenuController : MonoBehaviour
     {
         menu.SetActive(true);
         menuOpen = !menuOpen;
+        // Debug.Log(menuOpen);
     }
 
     // ================= Upgrade Menu =================
