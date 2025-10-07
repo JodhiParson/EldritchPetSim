@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: -6960903314270103029, guid: 140e800b94d75294fa2048e448031826, type: 3}
   isStackable: 1
   prefab: {fileID: 2613867668311664154, guid: d49a7361422ce414bb5bd83310ac125f, type: 3}
-  placementOffset: {x: 0, y: 1, z: 0}
+  placementOffset: {x: 0, y: 1.1, z: 0}

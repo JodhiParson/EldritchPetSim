@@ -12196,7 +12196,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 18ffbde286f40c04d938f63712729668, type: 2}
     - target: {fileID: 3626916397498700004, guid: 5997b73a13beab14cb0a82c38613618f, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 5997b73a13beab14cb0a82c38613618f, type: 3}
       propertyPath: m_LocalScale.x
@@ -15993,7 +15993,7 @@ GameObject:
   - component: {fileID: 1595567390}
   - component: {fileID: 1595567389}
   m_Layer: 5
-  m_Name: MenuButton (1)
+  m_Name: Exit Button
   m_TagString: OptionsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

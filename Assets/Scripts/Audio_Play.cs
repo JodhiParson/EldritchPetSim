@@ -14,7 +14,7 @@ public class Audio_Play : MonoBehaviour
 
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float musicVolume = 1f;
-    [Range(0f, 1f)] public float sfxVolume = 1f;
+    [Range(0f, .5f)] public float sfxVolume = .5f;
 
     [Header("Audio Text")]
     public TMP_Text musicText;
@@ -75,7 +75,7 @@ public class Audio_Play : MonoBehaviour
     }
 
     // 🔉 Decrease SFX Volume
-    public void DecreaseSFXVolume(float amount = 0.1f)
+    public void DecreaseSFXVolume(float amount = 0.05f)
     {
         sfxVolume = Mathf.Clamp01(sfxVolume - amount);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
@@ -86,7 +86,7 @@ public class Audio_Play : MonoBehaviour
     }
 
     // 🔉 Increase SFX Volume
-    public void IncreaseSFXVolume(float amount = 0.1f)
+    public void IncreaseSFXVolume(float amount = 0.05f)
     {
         sfxVolume = Mathf.Clamp01(sfxVolume + amount);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
