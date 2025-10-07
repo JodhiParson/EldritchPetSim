@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214132064586486343}
   - component: {fileID: 1763465410952367694}
-  - component: {fileID: 1538923746597922798}
+  - component: {fileID: 8613260113568178164}
   m_Layer: 0
   m_Name: Flower 2
   m_TagString: Untagged
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1538923746597922798
-CircleCollider2D:
+--- !u!60 &8613260113568178164
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,9 +118,41 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.44495648}
-  m_Radius: 0.10965475
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22, y: 0.04}
+      - {x: 0.19, y: 0.089999996}
+      - {x: 0.16, y: 0.099999994}
+      - {x: 0.07, y: 0.099999994}
+      - {x: 0.17999999, y: 0.099999994}
+      - {x: 0.19999999, y: 0.08}
+      - {x: 0.22, y: 0.07}
+      - {x: 0.22999999, y: 0.099999994}
+      - {x: 0.22999999, y: 0.31}
+      - {x: -0.049999997, y: 0.31}
+      - {x: -0.24, y: 0.26999998}
+      - {x: -0.24, y: -0.14999999}
+      - {x: -0.089999996, y: -0.26}
+      - {x: 0.16, y: -0.26}
+      - {x: 0.22999999, y: -0.03}
+      - {x: 0.22999999, y: 0.02}
+    - - {x: -0.11, y: 0.099999994}
+      - {x: -0.089999996, y: 0.08}
+      - {x: -0.08, y: 0.089999996}
+      - {x: -0.16, y: 0.089999996}
+      - {x: -0.14999999, y: 0.08}
+  m_UseDelaunayMesh: 0

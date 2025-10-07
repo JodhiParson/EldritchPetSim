@@ -204,7 +204,6 @@ public class PetManager : MonoBehaviour
 
         if (bunnyAudio != null)
             bunnyAudio.Play();
-
         petHunger += totalFeedAmount;
 
         if (StrengthPopUpGenerator.current != null)
