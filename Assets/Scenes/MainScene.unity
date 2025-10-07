@@ -7550,6 +7550,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817674706}
   m_CullTransparentMesh: 1
+--- !u!1 &825416518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 825416519}
+  - component: {fileID: 825416520}
+  m_Layer: 5
+  m_Name: CarrotThrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &825416519
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825416518}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5708333, y: 0.5708333, z: 0.5708333}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 960, y: 514.1606}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &825416520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825416518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4534403f6c001f94a9662b4bd6008295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carrotPrefab: {fileID: 3941523092292138960, guid: 6623db9bab303784c80819692e05f67c, type: 3}
+  rabbitSprite: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  speed: 5
 --- !u!1 &827177957
 GameObject:
   m_ObjectHideFlags: 0
@@ -17045,8 +17097,6 @@ MonoBehaviour:
   gachaResTxt: {fileID: 879932990}
   gachaRewardIcon: {fileID: 1412325658}
   gachaButton: {fileID: 1133870613}
-  gachaSystem: {fileID: 989258771}
-  gachaScroll: {fileID: 201819273}
   inventoryText: {fileID: 0}
   playerInventory: {fileID: 1456654363}
   inventoryUI: {fileID: 1337747092}
@@ -17946,8 +17996,6 @@ MonoBehaviour:
   gachaResTxt: {fileID: 0}
   gachaRewardIcon: {fileID: 0}
   gachaButton: {fileID: 0}
-  gachaSystem: {fileID: 0}
-  gachaScroll: {fileID: 0}
   inventoryText: {fileID: 0}
   playerInventory: {fileID: 0}
   inventoryUI: {fileID: 0}
@@ -21078,6 +21126,7 @@ SceneRoots:
   - {fileID: 1180107847}
   - {fileID: 405243599}
   - {fileID: 1400467684}
+  - {fileID: 825416519}
   - {fileID: 1851414871}
   - {fileID: 1767803608}
   - {fileID: 1752415772}
