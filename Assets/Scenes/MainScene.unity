@@ -1572,6 +1572,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189944666}
   m_CullTransparentMesh: 1
+--- !u!1 &201819272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 201819274}
+  - component: {fileID: 201819273}
+  m_Layer: 0
+  m_Name: ItemScroll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &201819273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201819272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e918e65fdbf63664d8b60609912475cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 11400000, guid: 335318b2a56ea21419065f48ec370824, type: 2}
+  - {fileID: 11400000, guid: d3f520637eb9d774cb4f467bc64c85c0, type: 2}
+  - {fileID: 11400000, guid: b89e96cc8d8c271448231dcb309adec8, type: 2}
+  - {fileID: 11400000, guid: cfc5068df47d0fe4f8e3d6bcf321cbc0, type: 2}
+  - {fileID: 11400000, guid: b3758f97a8ec31d4ea404b34b520dd74, type: 2}
+  - {fileID: 11400000, guid: 8b6eba9e1cff3c0479e6f1a9e387d736, type: 2}
+  - {fileID: 11400000, guid: d58aaed878f183a42afe5d049de44f92, type: 2}
+  displayImage: {fileID: 1412325658}
+  scrollSpeed: 0.05
+  spinCount: 30
+--- !u!4 &201819274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201819272}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 541.4766, y: -3.4049945, z: -6.2016335}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218851820
 GameObject:
   m_ObjectHideFlags: 0
@@ -17074,6 +17129,8 @@ MonoBehaviour:
   gachaResTxt: {fileID: 879932990}
   gachaRewardIcon: {fileID: 1412325658}
   gachaButton: {fileID: 1133870613}
+  gachaSystem: {fileID: 989258771}
+  gachaScroll: {fileID: 201819273}
   inventoryText: {fileID: 0}
   playerInventory: {fileID: 1456654363}
   inventoryUI: {fileID: 1337747092}
@@ -17973,6 +18030,8 @@ MonoBehaviour:
   gachaResTxt: {fileID: 0}
   gachaRewardIcon: {fileID: 0}
   gachaButton: {fileID: 0}
+  gachaSystem: {fileID: 0}
+  gachaScroll: {fileID: 0}
   inventoryText: {fileID: 0}
   playerInventory: {fileID: 0}
   inventoryUI: {fileID: 0}
@@ -21114,3 +21173,4 @@ SceneRoots:
   - {fileID: 1456654364}
   - {fileID: 231062471}
   - {fileID: 1273439463}
+  - {fileID: 201819274}
