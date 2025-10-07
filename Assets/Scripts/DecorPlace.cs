@@ -93,7 +93,7 @@ private void PlaceDecorationAtZone(PlacementArea zone)
     pd.placer = this;
     pd.placementArea = zone;
 
-    // ✅ Remove one item from inventory AND update UI
+
     if (playerInventory != null && selectedItem != null)
     {
         playerInventory.RemoveItem(selectedItem);   // this is void in your Inventory
@@ -109,9 +109,12 @@ private void PlaceDecorationAtZone(PlacementArea zone)
     UpdatePlacementZones();
 }
 
-    public void RemoveDecoration(PlacedDecoration placed)
+   public void RemoveDecoration(PlacedDecoration placed)
     {
         if (placed == null) return;
+
+            if (inventoryUI != null && inventoryUI.gameObject.activeInHierarchy)
+            return; // do nothing if the inventory panel is active
 
         // Return item to inventory
         if (playerInventory != null && placed.itemData != null)
