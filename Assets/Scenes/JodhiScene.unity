@@ -10437,7 +10437,7 @@ MonoBehaviour:
   rollCost: 100
   pethunger: {fileID: 1767803609}
   playerInventory: {fileID: 1456654363}
-  inventoryUI: {fileID: 0}
+  inventoryUI: {fileID: 756684205}
 --- !u!4 &1030162140
 Transform:
   m_ObjectHideFlags: 0

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EldritchPetSimIcon_0: -6017195235175563183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
