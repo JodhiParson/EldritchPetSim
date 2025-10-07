@@ -2061,7 +2061,7 @@ PrefabInstance:
     - target: {fileID: 4185205026108750287, guid: 640cf3e8f54a3f4438fc8ef37655c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1752415774}
     - target: {fileID: 4185205026108750287, guid: 640cf3e8f54a3f4438fc8ef37655c658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseDecMenu
@@ -2104,8 +2104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 0}
-  iconImage: {fileID: 0}
-  countText: {fileID: 0}
+  iconImage: {fileID: 803042590}
+  countText: {fileID: 1744759573}
 --- !u!1 &201819272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,7 +5682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   playerInventory: {fileID: 1456654363}
-  inventoryUI: {fileID: 756684205}
+  inventoryUI: {fileID: 1337747092}
 --- !u!4 &505722782
 Transform:
   m_ObjectHideFlags: 0
@@ -8242,6 +8242,17 @@ MonoBehaviour:
   slotsParent: {fileID: 1337747088}
   slotPrefab: {fileID: 2738748874741272857, guid: 640cf3e8f54a3f4438fc8ef37655c658, type: 3}
   emptySlotIcon: {fileID: 0}
+--- !u!114 &803042590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5844190101328074474, guid: 640cf3e8f54a3f4438fc8ef37655c658, type: 3}
+  m_PrefabInstance: {fileID: 199361900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817674706
 GameObject:
   m_ObjectHideFlags: 0
@@ -10789,7 +10800,7 @@ MonoBehaviour:
   rollCost: 100
   pethunger: {fileID: 1767803609}
   playerInventory: {fileID: 1456654363}
-  inventoryUI: {fileID: 756684205}
+  inventoryUI: {fileID: 1337747092}
 --- !u!4 &1030162140
 Transform:
   m_ObjectHideFlags: 0
@@ -14073,6 +14084,7 @@ GameObject:
   - component: {fileID: 1337747090}
   - component: {fileID: 1337747089}
   - component: {fileID: 1337747091}
+  - component: {fileID: 1337747092}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -14161,6 +14173,22 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1337747092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337747087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df6134c4687d1347a3742966974d50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 1456654363}
+  slotsParent: {fileID: 1337747088}
+  slotPrefab: {fileID: 199361901}
+  emptySlotIcon: {fileID: 0}
 --- !u!1 &1352156972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9018853858502322702, guid: 6aa976a18225d3f4fa41c4a3bcfb0fea, type: 3}
@@ -17595,6 +17623,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738401706}
   m_CullTransparentMesh: 1
+--- !u!114 &1744759573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8019998187255604869, guid: 640cf3e8f54a3f4438fc8ef37655c658, type: 3}
+  m_PrefabInstance: {fileID: 199361900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748957417
 GameObject:
   m_ObjectHideFlags: 0
