@@ -284,12 +284,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1400467684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 959.99994, y: 182}
-  m_SizeDelta: {x: 465.19995, y: 272.766}
+  m_AnchoredPosition: {x: -17.751831, y: -362}
+  m_SizeDelta: {x: -1448.967, y: -731.1804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &34680362
 CanvasRenderer:
@@ -7667,6 +7667,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716304913}
   m_CullTransparentMesh: 1
+--- !u!224 &726038097 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4591919513364406376, guid: 6aa976a18225d3f4fa41c4a3bcfb0fea, type: 3}
+  m_PrefabInstance: {fileID: 2399251741619572009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756684201
 GameObject:
   m_ObjectHideFlags: 0
@@ -14042,12 +14047,13 @@ RectTransform:
   - {fileID: 1939508916}
   - {fileID: 395388706}
   - {fileID: 1408720211}
+  - {fileID: 1352156973}
+  - {fileID: 1608981938}
+  - {fileID: 34680361}
   - {fileID: 1529573494}
   - {fileID: 562772170}
   - {fileID: 756684202}
   - {fileID: 325330541}
-  - {fileID: 1352156973}
-  - {fileID: 1608981938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15410,6 +15416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1352156972}
+  popupParent: {fileID: 1400467684}
+  strengthText: {fileID: 726038097}
   offset: {x: -180, y: -40}
   popupArea: {fileID: 34680361}
 --- !u!1 &1628646222
@@ -17204,8 +17212,8 @@ MonoBehaviour:
   baseFeedAmounts: 0a000000b4000000e8030000a00f0000983a0000b0ad0100
   unlocked: 010000000000
   totalFeedAmount: 0
-  idleFeedAmounts: 000000000000000000000000000000000000000000000000
-  idleBaseFeedAmounts: 0a000000b4000000e8030000881300001027000050c30000
+  idleFeedAmounts: 64000000f4010000e8030000881300001027000050c30000
+  idleBaseFeedAmounts: 64000000f4010000e8030000881300001027000050c30000
   upgradeCost: 10
   upgradeCost1: 1000
   upgradeCost2: 10000
@@ -17246,19 +17254,20 @@ MonoBehaviour:
   upgradeCostText3: {fileID: 1222333627}
   upgradeCostText4: {fileID: 454160740}
   upgradeCostText5: {fileID: 537910968}
+  unlockCostText0: {fileID: 0}
   unlockCostText1: {fileID: 263808673}
   unlockCostText2: {fileID: 1994266820}
   unlockCostText3: {fileID: 996169036}
   unlockCostText4: {fileID: 1352465146}
   unlockCostText5: {fileID: 1016653703}
-  costMultiplier: 1.2
-  feedMultiplier: 1.1
+  costMultiplier: 1.4
+  feedMultiplier: 1.2
   idleUpgradeCost: 20
   perSec: 3
   currentIdle: {fileID: 0}
   idleUpgradeCosts: e80300001027000050c30000a086010040420f0080841e00
-  idleUnlocked: 010000000000
-  idleCostMultiplier: 1.4
+  idleUnlocked: 000000000000
+  idleCostMultiplier: 1.1
   idleUpgradeCostText0: {fileID: 2074468179}
   idleUpgradeCostText1: {fileID: 957856792}
   idleUpgradeCostText2: {fileID: 552219161}
@@ -17266,7 +17275,7 @@ MonoBehaviour:
   idleUpgradeCostText4: {fileID: 973583037}
   idleUpgradeCostText5: {fileID: 315378703}
   idleUnlockCosts: e80300001027000050c30000a086010040420f0080841e00
-  idleUnlockCostText0: {fileID: 0}
+  idleUnlockCostText0: {fileID: 1410887683}
   idleUnlockCostText1: {fileID: 144698576}
   idleUnlockCostText2: {fileID: 365814500}
   idleUnlockCostText3: {fileID: 172066360}
@@ -18153,6 +18162,7 @@ MonoBehaviour:
   upgradeCostText3: {fileID: 0}
   upgradeCostText4: {fileID: 0}
   upgradeCostText5: {fileID: 0}
+  unlockCostText0: {fileID: 0}
   unlockCostText1: {fileID: 0}
   unlockCostText2: {fileID: 0}
   unlockCostText3: {fileID: 0}
@@ -21074,7 +21084,6 @@ SceneRoots:
   - {fileID: 496395878}
   - {fileID: 649444739}
   - {fileID: 1400467684}
-  - {fileID: 34680361}
   - {fileID: 1851414871}
   - {fileID: 1767803608}
   - {fileID: 1752415772}

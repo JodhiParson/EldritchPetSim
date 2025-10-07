@@ -7,8 +7,8 @@ public class StrengthPopUpGenerator : MonoBehaviour
 
     [Header("Popup Settings")]
     public GameObject prefab;
-    // public RectTransform popupParent; // assign your Canvas or UI container
-    // public RectTransform strengthText; // assign the Strength TMP_Text object
+    public RectTransform popupParent; // assign your Canvas or UI container
+    public RectTransform strengthText; // assign the Strength TMP_Text object
     public Vector2 offset = new Vector2(-180, -70f); // how far below the text
     public RectTransform popupArea;
 
@@ -20,7 +20,7 @@ public class StrengthPopUpGenerator : MonoBehaviour
     private void Update()
     {
 
-        //debug
+        // //debug
         // if (Input.GetKeyDown(KeyCode.F10))
         // {
         //     CreatePopup("+" + Random.Range(0, 1000));

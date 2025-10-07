@@ -94,8 +94,8 @@ public class PetManager : MonoBehaviour
     public TMP_Text unlockCostText4;
     public TMP_Text unlockCostText5;
 
-    public float costMultiplier = 1.2f;
-    public float feedMultiplier = 1.1f;
+    public float costMultiplier = 1.4f;
+    public float feedMultiplier = 1.2f;
 
     [Header("Idle Upgrade System")]
     public int idleUpgradeCost = 20;
@@ -106,9 +106,9 @@ public class PetManager : MonoBehaviour
     public TMP_Text currentIdle;
     [Header("Idle Upgrade System")]
     public int[] idleUpgradeCosts = new int[6] { 20, 200, 2000, 20000, 200000, 2000000 };
-    public bool[] idleUnlocked = new bool[6] { true, false, false, false, false, false };
+    public bool[] idleUnlocked = new bool[6] { false, false, false, false, false, false };
     // public int[] idleIncrements = new int[6] { 3, 20, 200, 2000, 20000, 200000 }; // perSec increment per upgrade
-    public float idleCostMultiplier = 1.4f;
+    public float idleCostMultiplier = 1.1f;
 
     // [Header("Idle Upgrade Buttons")]
     
@@ -130,7 +130,7 @@ public class PetManager : MonoBehaviour
     public TMP_Text idleUnlockCostText2;
     public TMP_Text idleUnlockCostText3;
     public TMP_Text idleUnlockCostText4;
-public TMP_Text idleUnlockCostText5;
+    public TMP_Text idleUnlockCostText5;
 
     [Header("Gacha System")]
     public GachaSys gacha;
@@ -155,23 +155,23 @@ public TMP_Text idleUnlockCostText5;
     void Start()
     {
         feedAmounts[0] = baseFeedAmounts[0]; // Carrot 1 starts unlocked
-        idleFeedAmounts[0] = idleBaseFeedAmounts[0];
+        // idleFeedAmounts[0] = idleBaseFeedAmounts[0];
         RecalculateTotalFeedPower();
 
-        // Hide all upgrade buttons for locked carrots
-        Button[] upgradeButtons = { upgradeButton, upgradeButton1, upgradeButton2, upgradeButton3, upgradeButton4, upgradeButton5 };
-        Button[] idleUpgradeButtons = { idleUnlockButton0,idleUnlockButton1,idleUnlockButton2,idleUnlockButton3,idleUnlockButton4,idleUnlockButton5};
+        // // Hide all upgrade buttons for locked carrots
+        // Button[] upgradeButtons = { upgradeButton, upgradeButton1, upgradeButton2, upgradeButton3, upgradeButton4, upgradeButton5 };
+        // Button[] idleUpgradeButtons = { idleUnlockButton0,idleUnlockButton1,idleUnlockButton2,idleUnlockButton3,idleUnlockButton4,idleUnlockButton5};
 
-        for (int i = 1; i < upgradeButtons.Length; i++)
-        {
-            if (upgradeButtons[i] != null)
-                upgradeButtons[i].gameObject.SetActive(unlocked[i]);
-        }
-        for (int i = 1; i < idleUpgradeButtons.Length; i++)
-        {
-            if (idleUpgradeButtons[i] != null)
-                idleUpgradeButtons[i].gameObject.SetActive(idleUnlocked[i]);
-        }
+        // for (int i = 1; i < upgradeButtons.Length; i++)
+        // {
+        //     if (upgradeButtons[i] != null)
+        //         upgradeButtons[i].gameObject.SetActive(unlocked[i]);
+        // }
+        // for (int i = 1; i < idleUpgradeButtons.Length; i++)
+        // {
+        //     if (idleUpgradeButtons[i] != null)
+        //         idleUpgradeButtons[i].gameObject.SetActive(idleUnlocked[i]);
+        // }
 
         UpdateUI();
     }
@@ -186,6 +186,7 @@ public TMP_Text idleUnlockCostText5;
         {
             int ticks = Mathf.FloorToInt(idleTimer);
             petHunger += idleStrength * ticks;
+            // Debug.Log(idleStrength);
             idleTimer -= ticks;
 
             if (StrengthPopUpGenerator.current != null && (idleStrength * ticks) > 0)
@@ -232,11 +233,11 @@ public TMP_Text idleUnlockCostText5;
         if (petHunger >= currentCost)
         {
             petHunger -= currentCost;
-            feedAmounts[index] = Mathf.CeilToInt(feedAmounts[index] * feedMultiplier);
+            feedAmounts[index] = Mathf.CeilToInt(feedAmounts[index] * idleCostMultiplier);
 
             switch (index)
             {
-                case 0: upgradeCost = Mathf.CeilToInt(upgradeCost * costMultiplier); break;
+                case 0: upgradeCost = Mathf.CeilToInt(upgradeCost * feedMultiplier); break;
                 case 1: upgradeCost1 = Mathf.CeilToInt(upgradeCost1 * costMultiplier); break;
                 case 2: upgradeCost2 = Mathf.CeilToInt(upgradeCost2 * costMultiplier); break;
                 case 3: upgradeCost3 = Mathf.CeilToInt(upgradeCost3 * costMultiplier); break;
@@ -272,12 +273,12 @@ public TMP_Text idleUnlockCostText5;
 
             switch (index)
             {
-                case 0: idleUpgradeCosts[0] = Mathf.CeilToInt(idleUpgradeCosts[0] * costMultiplier); break;
-                case 1: idleUpgradeCosts[1] = Mathf.CeilToInt(idleUpgradeCosts[1] * costMultiplier); break;
-                case 2: idleUpgradeCosts[2] = Mathf.CeilToInt(idleUpgradeCosts[2] * costMultiplier); break;
-                case 3: idleUpgradeCosts[3] = Mathf.CeilToInt(idleUpgradeCosts[3] * costMultiplier); break;
-                case 4: idleUpgradeCosts[4] = Mathf.CeilToInt(idleUpgradeCosts[4] * costMultiplier); break;
-                case 5: idleUpgradeCosts[5] = Mathf.CeilToInt(idleUpgradeCosts[5] * costMultiplier); break;
+                case 0: idleUpgradeCosts[0] = Mathf.CeilToInt(idleUpgradeCosts[0] * feedMultiplier); break;
+                case 1: idleUpgradeCosts[1] = Mathf.CeilToInt(idleUpgradeCosts[1] * feedMultiplier); break;
+                case 2: idleUpgradeCosts[2] = Mathf.CeilToInt(idleUpgradeCosts[2] * feedMultiplier); break;
+                case 3: idleUpgradeCosts[3] = Mathf.CeilToInt(idleUpgradeCosts[3] * feedMultiplier); break;
+                case 4: idleUpgradeCosts[4] = Mathf.CeilToInt(idleUpgradeCosts[4] * feedMultiplier); break;
+                case 5: idleUpgradeCosts[5] = Mathf.CeilToInt(idleUpgradeCosts[5] * feedMultiplier); break;
             }
 
             RecalculateIdleStrength();
@@ -349,25 +350,6 @@ public TMP_Text idleUnlockCostText5;
             UpdateUI();
         }
     }
-
-    void RecalculateTotalFeedPower()
-    {
-        totalFeedAmount = 0;
-        for (int i = 0; i < feedAmounts.Length; i++)
-        {
-            if (unlocked[i])
-                totalFeedAmount += feedAmounts[i];
-        }
-    }
-    void RecalculateIdleStrength()
-    {
-        idleStrength = 0;
-        for (int i = 0; i < idleFeedAmounts.Length; i++)
-        {
-            if (idleUnlocked[i])
-                idleStrength += idleFeedAmounts[i];
-        }
-    }
     
      // ================= Unlock Rituals =================
     public void UnlockRitual(int index)
@@ -400,7 +382,7 @@ public TMP_Text idleUnlockCostText5;
                 cg.alpha = 0;                // invisible
                 cg.blocksRaycasts = false;   // no longer blocks clicks
             }
-
+            RecalculateIdleStrength();
             UpdateUI();
         }
         else
@@ -408,7 +390,24 @@ public TMP_Text idleUnlockCostText5;
             // Debug.Log($"Not enough petHunger to unlock ritual {index}.");
         }
     }
-
+    void RecalculateTotalFeedPower()
+    {
+        totalFeedAmount = 0;
+        for (int i = 0; i < feedAmounts.Length; i++)
+        {
+            if (unlocked[i])
+                totalFeedAmount += feedAmounts[i];
+        }
+    }
+    void RecalculateIdleStrength()
+    {
+        idleStrength = 0;
+        for (int i = 0; i < idleFeedAmounts.Length; i++)
+        {
+            if (idleUnlocked[i])
+                idleStrength += idleFeedAmounts[i];
+        }
+    }
 
 
 
