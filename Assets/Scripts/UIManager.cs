@@ -126,6 +126,8 @@ public TMP_Text idleUnlockCostText5;
     public TMP_Text gachaResTxt;
     public Image gachaRewardIcon;
     public Button gachaButton;
+    public GachaSys gachaSystem;
+    public GachaItemScroll gachaScroll;
 
     [Header("Inventory")]
     public TMP_Text inventoryText;
@@ -469,20 +471,21 @@ public TMP_Text idleUnlockCostText5;
 
 
 
-    // ================= Gacha System =================
-    public void OnRollButton()
+        // ================= Gacha System =================
+public void OnRollButton()
+{
+    GachaReward reward = gacha.Roll();
+    if (reward != null && reward.rewardItem != null)
     {
-        GachaReward reward = gacha.Roll(); // Roll already adds item
-        if (reward != null)
+        // Start scroll and update UI *after* it finishes
+        gachaScroll.StartScroll(reward.rewardItem, () =>
         {
             gachaResTxt.text = "You got: " + reward.rewardItem.itemName;
             if (gachaRewardIcon != null && reward.rewardItem.icon != null)
                 gachaRewardIcon.sprite = reward.rewardItem.icon;
-
-            // Inventory UI is already updated in Gacha.Roll(), so optional
-            // inventoryUI.UpdateInventoryUI();
-        }
+        });
     }
+}
 
     // ================= Exit Game =================
     public void ExitGame()
