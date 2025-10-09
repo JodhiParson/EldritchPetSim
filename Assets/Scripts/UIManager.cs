@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.Rendering.Universal;
+// using UnityEditor.Rendering.Universal;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
@@ -557,8 +557,5 @@ public void OnRollButton()
         Debug.Log("Exiting game...");
         Application.Quit();
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
     }
 }
